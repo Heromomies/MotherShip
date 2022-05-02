@@ -560,7 +560,22 @@ PlayerSettings:
   webGLLinkerTarget: 1
   webGLThreadsSupport: 0
   webGLDecompressionFallback: 0
-  scriptingDefineSymbols: {}
+  scriptingDefineSymbols:
+    1: TextMeshPro;EASY_MOBILE;EASY_MOBILE_PRO
+    4: TextMeshPro;EASY_MOBILE;EASY_MOBILE_PRO
+    7: TextMeshPro;EASY_MOBILE;EASY_MOBILE_PRO
+    13: TextMeshPro;EASY_MOBILE;EASY_MOBILE_PRO
+    14: TextMeshPro;EASY_MOBILE;EASY_MOBILE_PRO
+    19: TextMeshPro;EASY_MOBILE;EASY_MOBILE_PRO
+    21: TextMeshPro;EASY_MOBILE;EASY_MOBILE_PRO
+    25: TextMeshPro;EASY_MOBILE;EASY_MOBILE_PRO
+    27: TextMeshPro;EASY_MOBILE;EASY_MOBILE_PRO
+    28: TextMeshPro;EASY_MOBILE;EASY_MOBILE_PRO
+    29: TextMeshPro;EASY_MOBILE;EASY_MOBILE_PRO
+    30: TextMeshPro;EASY_MOBILE;EASY_MOBILE_PRO
+    31: EASY_MOBILE;EASY_MOBILE_PRO
+    32: TextMeshPro;EASY_MOBILE;EASY_MOBILE_PRO
+    33: TextMeshPro;EASY_MOBILE;EASY_MOBILE_PRO
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend: {}
