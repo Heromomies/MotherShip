@@ -19,6 +19,23 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _agent.SetDestination(target.position);
+        
+        
+        var fingerCount = 0;
+        foreach (Touch touch in Input.touches)
+        {
+            if (touch.phase != TouchPhase.Ended && touch.phase != TouchPhase.Canceled)
+            {
+                fingerCount++;
+            }
+        }
+        if (fingerCount > 0)
+        {
+            Debug.Log("I'm here");
+            
+            var fingerPos =  Input.GetTouch(0).position;
+         
+            _agent.SetDestination(fingerPos);
+        }
     }
 }
