@@ -3,14 +3,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BaseEnemy : MonoBehaviour
+public class ScoutEnemy : Enemy, IEnemiesDamageable
 {
-    public float speed;
-    public int damage;
+    private float speed;
+    private int damage;
     private Transform _target;
 
     private void Start()
     {
+        damage = statsBase.damage;
+        speed = statsBase.speed;
+
         _target = MotherShipManager.Instance.transform;
     }
 
@@ -21,12 +24,31 @@ public class BaseEnemy : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("I'm here");
         if (other.CompareTag("MotherShip"))
         {
-            
             MotherShipManager.Instance.health.TakeDamage(damage);
             gameObject.SetActive(false);
         }
+    }
+
+    public int CurrentHealth
+    {
+        get;
+        private set;
+    }
+    
+    public void TakeDamage(int attackDamage)
+    {
+        CurrentHealth -= attackDamage;
+
+        if (attackDamage <= 0)
+        {
+            Die();
+        }
+    }
+
+    private void Die()
+    {
+        //Die method
     }
 }
