@@ -34,6 +34,12 @@ public class MinionsMovement : MonoBehaviour
         {
             var ray = _cam.ScreenPointToRay(Input.mousePosition);
             
+            Vector3 diff = _cam.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+            diff.Normalize();
+ 
+            float rotZ = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.Euler(0f, 0f, rotZ - 90);
+            
             _agent.SetDestination(ray.origin);
         }
     }
