@@ -3,16 +3,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ScoutEnemy : Enemy, IEnemiesDamageable
+public class Scout : Enemy, IDamageable
 {
     private float speed;
     private int damage;
+
+    private string nameEnemyToSpawn;
+    private bool canSpawnEnemyOnDie;
+    
     private Transform _target;
 
     private void Start()
     {
         damage = statsBase.damage;
         speed = statsBase.speed;
+        canSpawnEnemyOnDie = statsBase.spawnAnotherEnemyOnDie;
+        if (canSpawnEnemyOnDie)
+        {
+            nameEnemyToSpawn = statsBase.nameEnemyToSpawn;
+        }
 
         _target = MotherShipManager.Instance.transform;
     }
@@ -27,7 +36,7 @@ public class ScoutEnemy : Enemy, IEnemiesDamageable
         if (other.CompareTag("MotherShip"))
         {
             MotherShipManager.Instance.health.TakeDamage(damage);
-            gameObject.SetActive(false);
+            TakeDamage(1);
         }
     }
 
@@ -47,8 +56,14 @@ public class ScoutEnemy : Enemy, IEnemiesDamageable
         }
     }
 
-    private void Die()
+    public void Die()
     {
-        //Die method
+        if (canSpawnEnemyOnDie)
+        {
+            PoolManager.Instance.SpawnObjectFromPool(nameEnemyToSpawn, GameManager.Instance.spawnEnemies.position, Quaternion.identity, null);
+        }
+        
+        gameObject.SetActive(false);
     }
+    
 }

@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface IEnemiesDamageable 
+public interface IDamageable 
 {
-    int CurrentHealth { get; }
 	void TakeDamage(int attackDamage);
+
+	void Die();
 }

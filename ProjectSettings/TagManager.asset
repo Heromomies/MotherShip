@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - MotherShip
+  - Enemy
   layers:
   - Default
   - TransparentFX
