@@ -49,8 +49,8 @@ public class Scout : Enemy, IDamageable
     public void TakeDamage(int attackDamage)
     {
         CurrentHealth -= attackDamage;
-
-        if (attackDamage <= 0)
+        
+        if (CurrentHealth <= 0)
         {
             Die();
         }
