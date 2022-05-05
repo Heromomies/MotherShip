@@ -2,23 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MotherShipHealth : MonoBehaviour
+public class MotherShipHealth : MonoBehaviour, IDamageable
 {
-    public int health;
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
+    public int CurrentHealth { get; private set; }
+
     public void TakeDamage(int damage)
     {
-        health -= damage;
-        if (health <= 0)
+        CurrentHealth -= damage;
+        if (CurrentHealth <= 0)
         {
-            //TODO MotherShip dead
+            Die();
         }
+    }
+
+    public void Die()
+    {
+       
     }
 }
