@@ -11,7 +11,10 @@ public class MotherShipManager : MonoBehaviour
     public Transform transformSpawnMinion;
 
     public MotherShipHealth health;
+
+    public int numberMinionsMax;
     
+    public List<GameObject> listMinions;
     private float _timeLeftBeforeSpawn;
 
     #region Singleton
@@ -41,10 +44,17 @@ public class MotherShipManager : MonoBehaviour
     {
         _timeLeftBeforeSpawn -= Time.deltaTime;
         sliderSpawner.value = _timeLeftBeforeSpawn;
-        if(_timeLeftBeforeSpawn < 0)
+        if(_timeLeftBeforeSpawn < 0 && listMinions.Count < numberMinionsMax)
         {
-            Instantiate(prefabMinion,transformSpawnMinion.position, Quaternion.identity);
+            GameObject minion = Instantiate(prefabMinion,transformSpawnMinion.position, Quaternion.identity);
+            listMinions.Add(minion);
+            
             _timeLeftBeforeSpawn = timeBeforeSpawnMinion;
         }
+    }
+
+    public void RemoveMinionFromList(GameObject minionToRemove)
+    {
+        listMinions.Remove(minionToRemove);
     }
 }

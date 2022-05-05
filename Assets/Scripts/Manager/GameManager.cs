@@ -6,14 +6,6 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public Transform spawnEnemies;
-
-    [Header("EXPERIENCE")]
-    public Slider sliderExperience;
-    public int currentExperience;
-    public int targetExperience;
-    public int experienceToAddByLevel;
-    
-    public int levelNumber;
     
     #region Singleton
 
@@ -26,22 +18,4 @@ public class GameManager : MonoBehaviour
     }
 
     #endregion
-
-    public void AddExperience(int xp)
-    {
-        currentExperience += xp;
-
-        while (currentExperience >= targetExperience)
-        {
-            currentExperience = currentExperience - targetExperience;
-            levelNumber++;
-
-            targetExperience += experienceToAddByLevel;
-        }
-
-        sliderExperience.value = currentExperience;
-        sliderExperience.maxValue = targetExperience;
-    }
-    
-    
 }

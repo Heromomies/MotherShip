@@ -16,6 +16,7 @@ public class MinionsHealth : MonoBehaviour, IDamageable
 	public void TakeDamage(int attackDamage)
 	{
 		health -= attackDamage;
+		
 		if (health <= 0)
 		{
 			Die();
@@ -24,7 +25,7 @@ public class MinionsHealth : MonoBehaviour, IDamageable
 
 	public void Die()
 	{
-		Debug.Log("A minion died.");
+		MotherShipManager.Instance.RemoveMinionFromList(gameObject);
 		gameObject.SetActive(false);
 	}
 }
