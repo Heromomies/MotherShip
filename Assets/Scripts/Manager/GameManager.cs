@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public Transform spawnEnemies;
+    public GameObject canvasButton;
     
     #region Singleton
 

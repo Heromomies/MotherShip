@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6921621128997227441}
   - component: {fileID: 6921621128997227440}
   m_Layer: 0
-  m_Name: ExperienceManager
+  m_Name: ButtonManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43,9 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0276117a77cc454bbae45fdffd715fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sliderExperience: {fileID: 0}
   currentExperience: 0
   targetExperience: 100
   experienceToAddByLevel: 20
-  levelNumber: 0
   minionScriptableObject: {fileID: 11400000, guid: 3e75b84ff415d7340af188b7f69a06b0, type: 2}
