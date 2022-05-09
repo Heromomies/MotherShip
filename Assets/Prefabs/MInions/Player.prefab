@@ -4828,7 +4828,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 361246910}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.06, y: 0.06, z: 0.08}
   m_Children:
@@ -5172,10 +5172,9 @@ GameObject:
   - component: {fileID: 8550506833937036409}
   - component: {fileID: 427015557961206061}
   - component: {fileID: 8530624176341389013}
-  - component: {fileID: 8215103030101275864}
   - component: {fileID: 1437559096}
-  - component: {fileID: 5802587270040170641}
-  m_Layer: 0
+  - component: {fileID: 768119136}
+  m_Layer: 6
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -5223,6 +5222,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerStats: {fileID: 11400000, guid: 3e75b84ff415d7340af188b7f69a06b0, type: 2}
+  angle: 90
+  rayRange: 1
+  minionSprite: {fileID: 361246918}
+  angleRaycast: 90
+  numberOfRays: 15
+  totalAngle: 360
+  layerPlayer:
+    serializedVersion: 2
+    m_Bits: 64
+  cursorTexture: {fileID: 2800000, guid: b902f763d0e47364dae25207b7e47800, type: 3}
 --- !u!114 &8530624176341389013
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5236,28 +5245,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerStats: {fileID: 11400000, guid: 3e75b84ff415d7340af188b7f69a06b0, type: 2}
---- !u!195 &8215103030101275864
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8215103030101275868}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.25
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 0
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 0.28
-  m_BaseOffset: 0.14
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 3
 --- !u!50 &1437559096
 Rigidbody2D:
   serializedVersion: 4
@@ -5279,8 +5266,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!68 &5802587270040170641
-EdgeCollider2D:
+--- !u!61 &768119136
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -5292,15 +5279,16 @@ EdgeCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.015876144}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.31732547, y: 0.3332016}
   m_EdgeRadius: 0
-  m_Points:
-  - {x: 0.08538231, y: -0.09803389}
-  - {x: -0.0019267406, y: -0.06644222}
-  - {x: -0.08453922, y: -0.09604153}
-  - {x: -0.006333247, y: 0.11563197}
-  - {x: 0.08567766, y: -0.09679315}
-  m_AdjacentStartPoint: {x: 0, y: 0}
-  m_AdjacentEndPoint: {x: 0, y: 0}
-  m_UseAdjacentStartPoint: 0
-  m_UseAdjacentEndPoint: 0
