@@ -58,7 +58,7 @@ public class ButtonManager : MonoBehaviour
 
 	public void ButtonClicked()
 	{
-		waveSpawner.SpawnNextWave();
+		//waveSpawner.SpawnNextWave();
 	}
 	
 }

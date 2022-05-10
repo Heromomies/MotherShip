@@ -156,7 +156,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04675af9398992646b0c236677035b28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentHealth: 5
   timeRegen: 0
+  sliderHealth: {fileID: 0}
 --- !u!114 &8335408734154563895
 MonoBehaviour:
   m_ObjectHideFlags: 0

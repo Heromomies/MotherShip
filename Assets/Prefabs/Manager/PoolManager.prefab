@@ -47,6 +47,3 @@ MonoBehaviour:
   - poolTag: Worker
     prefab: {fileID: 6265012000951325452, guid: 97c6e7e808a8d8f4fa273d9ff4715f9d, type: 3}
     poolSize: 10
-  - poolTag: ParticleOnEnemyDie
-    prefab: {fileID: 3161996406017965336, guid: 827937b46a923504fa3f01eef8073f81, type: 3}
-    poolSize: 5

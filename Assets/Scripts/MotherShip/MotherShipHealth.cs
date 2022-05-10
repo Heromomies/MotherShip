@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class MotherShipHealth : MonoBehaviour, IDamageable
 {
     // Update is called once per frame
-    public float CurrentHealth { get; set; }
+    public float currentHealth;
     public float timeRegen;
 
     
@@ -16,8 +16,8 @@ public class MotherShipHealth : MonoBehaviour, IDamageable
 
     private void Start()
     {
-        sliderHealth.value = CurrentHealth;
-        sliderHealth.maxValue = CurrentHealth;
+        sliderHealth.maxValue = currentHealth;
+        sliderHealth.value = currentHealth;
     }
 
     private void Update()
@@ -32,22 +32,19 @@ public class MotherShipHealth : MonoBehaviour, IDamageable
     
     private void RegenHealth()
     {
-        if (timeRegen >= 0 && CurrentHealth <=  sliderHealth.maxValue)
+        if (timeRegen > 0 && currentHealth < sliderHealth.maxValue)
         {
-            CurrentHealth += timeRegen;
-        }
-        else
-        {
-            timeRegen = 0;
+            currentHealth += timeRegen * Time.deltaTime;
+            sliderHealth.value = currentHealth;
         }
     }
     
     public void TakeDamage(float damage)
     {
-        CurrentHealth -= damage;
-        sliderHealth.value = CurrentHealth;
+        currentHealth -= damage;
+        sliderHealth.value = currentHealth;
         
-        if (CurrentHealth <= 0)
+        if (currentHealth <= 0)
         {
             Die();
         }
@@ -55,6 +52,7 @@ public class MotherShipHealth : MonoBehaviour, IDamageable
 
     public void Die()
     {
+        Debug.Log("I'm dead");
        //TODO end of the game
     }
 }

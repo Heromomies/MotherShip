@@ -42,14 +42,29 @@ public class MotherShipManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _timeLeftBeforeSpawn -= Time.deltaTime;
-        sliderSpawner.value = _timeLeftBeforeSpawn;
-        if(_timeLeftBeforeSpawn < 0 && listMinions.Count < numberMinionsMax)
+        if (listMinions.Count < numberMinionsMax)
         {
-            GameObject minion = Instantiate(prefabMinion,transformSpawnMinion.position, Quaternion.identity);
-            listMinions.Add(minion);
+            _timeLeftBeforeSpawn -= Time.deltaTime;
+            sliderSpawner.value = _timeLeftBeforeSpawn;
+
+            if(_timeLeftBeforeSpawn < 0)
+            {
+                GameObject minion = Instantiate(prefabMinion,transformSpawnMinion.position, Quaternion.identity);
+                listMinions.Add(minion);
             
+                _timeLeftBeforeSpawn = timeBeforeSpawnMinion;
+                sliderSpawner.maxValue = timeBeforeSpawnMinion;
+
+                if (timeBeforeSpawnMinion <= 0)
+                {
+                    timeBeforeSpawnMinion = 0.5f;
+                }
+            }
+        }
+        else if (listMinions.Count == numberMinionsMax)
+        {
             _timeLeftBeforeSpawn = timeBeforeSpawnMinion;
+            sliderSpawner.value = _timeLeftBeforeSpawn;
         }
     }
 

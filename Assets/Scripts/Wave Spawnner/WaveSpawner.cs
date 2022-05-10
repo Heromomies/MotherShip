@@ -30,12 +30,15 @@ public class WaveSpawner : MonoBehaviour
 	private bool canSpawnButtons = true;
 	private void Update()
 	{
-		currentWave = waves[currentWaveNumber];
-		SpawnWave();
-		GameObject[] totalEnemies = GameObject.FindGameObjectsWithTag("Enemy");
-		if (totalEnemies.Length == 0 && !canSpawn && currentWaveNumber + 1 != waves.Length)
+		if (waves.Length > 0)
 		{
-			SpawnButtons();
+			currentWave = waves[currentWaveNumber];
+			SpawnWave();
+			GameObject[] totalEnemies = GameObject.FindGameObjectsWithTag("Enemy");
+			if (totalEnemies.Length == 0 && !canSpawn && currentWaveNumber + 1 != waves.Length)
+			{
+				SpawnButtons();
+			}
 		}
 	}
 
