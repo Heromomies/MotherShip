@@ -43,4 +43,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cc95c95307a506498b780596b3cd512, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pools: []
+  pools:
+  - poolTag: Worker
+    prefab: {fileID: 6265012000951325452, guid: 97c6e7e808a8d8f4fa273d9ff4715f9d, type: 3}
+    poolSize: 10
+  - poolTag: ParticleOnEnemyDie
+    prefab: {fileID: 3161996406017965336, guid: 827937b46a923504fa3f01eef8073f81, type: 3}
+    poolSize: 5
