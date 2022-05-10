@@ -145,3 +145,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statsBase: {fileID: 11400000, guid: ac8f4772822b2b3479df81fa7c22eb30, type: 2}
+  explosionSystem: {fileID: 4314723461917522873, guid: 827937b46a923504fa3f01eef8073f81, type: 3}

@@ -7,6 +7,7 @@ public class ButtonManager : MonoBehaviour
 {
 	[Header("EXPERIENCE")] public WaveSpawner waveSpawner;
 	public MinionsScriptableObject minionScriptableObject;
+	public MotherShipHealth motherShipHealth;
 	
 	#region Singleton
 
@@ -22,31 +23,35 @@ public class ButtonManager : MonoBehaviour
 
 	
 
-	public void AddMinionMax()
+	public void ChangeMinionMax(int numberMinions)
 	{
-		MotherShipManager.Instance.numberMinionsMax++;
+		MotherShipManager.Instance.numberMinionsMax += numberMinions;
 	}
-	public void AddHealthMinions()
+	public void ChangeHealthMinions(float healthNumber)
 	{
-		minionScriptableObject.health++;
+		minionScriptableObject.health += healthNumber;
 	}
-	public void IncreaseMotherShipSpawnRate()
+	public void ChangeHealthMotherShip(float healthNumber)
 	{
-		MotherShipManager.Instance.timeBeforeSpawnMinion--;
+		motherShipHealth.ChangeMaxValue(healthNumber);
 	}
-	public void AddMinionsDamage()
+	public void ChangeMotherShipSpawnRate(float spawnRate)
 	{
-		minionScriptableObject.damage++;
+		MotherShipManager.Instance.timeBeforeSpawnMinion -= spawnRate;
 	}
-	public void AddHealthRegenMotherShip()
+	public void ChangeMinionsDamage(float minionsDamage)
 	{
-		
+		minionScriptableObject.damage += minionsDamage;
 	}
-	public void AddMinionSpeed()
+	public void ChangeHealthRegenMotherShip(float regenNumber)
 	{
-		minionScriptableObject.speed++;
+		motherShipHealth.timeRegen = regenNumber;
 	}
-	public void AddSpecial()
+	public void ChangeMinionSpeed(float speedNumber)
+	{
+		minionScriptableObject.speed += speedNumber;
+	}
+	public void ChangeSpecial()
 	{
 		
 	}

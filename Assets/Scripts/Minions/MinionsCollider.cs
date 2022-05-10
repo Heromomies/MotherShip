@@ -6,7 +6,7 @@ using UnityEngine;
 public class MinionsCollider : MonoBehaviour
 {
     public MinionsScriptableObject playerStats;
-    private int damage;
+    private float damage;
 
     private void Awake()
     {

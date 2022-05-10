@@ -19,4 +19,12 @@ public class GameManager : MonoBehaviour
     }
 
     #endregion
+
+
+    public IEnumerator DeactivateParticles(GameObject objectToDeactivate, float timeBeforeDeactivate)
+    {
+        yield return new WaitForSeconds(timeBeforeDeactivate);
+
+        objectToDeactivate.SetActive(false);
+    }
 }

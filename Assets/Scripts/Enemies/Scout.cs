@@ -5,16 +5,21 @@ using UnityEngine;
 
 public class Scout : Enemy, IDamageable
 {
+    public ParticleSystem explosionSystem;
+    
     private float speed;
-    private int damage;
+    private float damage;
 
     private string nameEnemyToSpawn;
     private bool canSpawnEnemyOnDie;
     
     private Transform _target;
-
+    public float CurrentHealth { get; private set; }
+    
     private void Start()
     {
+        ParticleSystem eS = Instantiate(explosionSystem);
+        explosionSystem = eS;
         damage = statsBase.damage;
         speed = statsBase.speed;
         canSpawnEnemyOnDie = statsBase.spawnAnotherEnemyOnDie;
@@ -39,14 +44,8 @@ public class Scout : Enemy, IDamageable
             TakeDamage(5);
         }
     }
-
-    public int CurrentHealth
-    {
-        get;
-        private set;
-    }
     
-    public void TakeDamage(int attackDamage)
+    public void TakeDamage(float attackDamage)
     {
         CurrentHealth -= attackDamage;
         
@@ -58,13 +57,14 @@ public class Scout : Enemy, IDamageable
 
     public void Die()
     {
-        PoolManager.Instance.SpawnObjectFromPool("ParticleOnEnemyDie", transform.position, Quaternion.identity, null);
-        
+        explosionSystem.transform.position = transform.position;
+        explosionSystem.Play();
+
         if (canSpawnEnemyOnDie)
         {
             PoolManager.Instance.SpawnObjectFromPool(nameEnemyToSpawn, GameManager.Instance.spawnEnemies.position, Quaternion.identity, null);
         }
-        
+
         gameObject.SetActive(false);
     }
     

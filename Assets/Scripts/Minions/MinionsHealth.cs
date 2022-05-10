@@ -6,14 +6,14 @@ using UnityEngine;
 public class MinionsHealth : MonoBehaviour, IDamageable
 {
 	public MinionsScriptableObject playerStats;
-	private int health;
+	private float health;
 
 	private void Awake()
 	{
 		health = playerStats.health;
 	}
 
-	public void TakeDamage(int attackDamage)
+	public void TakeDamage(float attackDamage)
 	{
 		health -= attackDamage;
 		

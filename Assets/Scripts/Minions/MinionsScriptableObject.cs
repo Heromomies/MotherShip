@@ -6,6 +6,6 @@ using UnityEngine;
 public class MinionsScriptableObject : ScriptableObject
 {
 	public float speed;
-	public int health;
-	public int damage;
+	public float health;
+	public float damage;
 }
