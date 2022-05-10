@@ -36,7 +36,7 @@ public class Scout : Enemy, IDamageable
         if (other.CompareTag("MotherShip"))
         {
             MotherShipManager.Instance.health.TakeDamage(damage);
-            TakeDamage(1);
+            TakeDamage(5);
         }
     }
 
@@ -58,6 +58,8 @@ public class Scout : Enemy, IDamageable
 
     public void Die()
     {
+        PoolManager.Instance.SpawnObjectFromPool("ParticleOnEnemyDie", transform.position, Quaternion.identity, null);
+        
         if (canSpawnEnemyOnDie)
         {
             PoolManager.Instance.SpawnObjectFromPool(nameEnemyToSpawn, GameManager.Instance.spawnEnemies.position, Quaternion.identity, null);

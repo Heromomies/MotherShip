@@ -15,7 +15,7 @@ public class Wave
     public List<GameObject> buttonsToSpawn;
 }
 
-public class WaveSpawnner : MonoBehaviour
+public class WaveSpawner : MonoBehaviour
 {
 	public Wave[] waves;
 	public Transform[] spawnPoints;

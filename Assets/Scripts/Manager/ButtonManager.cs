@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class ButtonManager : MonoBehaviour
 {
-	[Header("EXPERIENCE")] public WaveSpawnner waveSpawnner;
+	[Header("EXPERIENCE")] public WaveSpawner waveSpawner;
 	public MinionsScriptableObject minionScriptableObject;
 	
 	#region Singleton
@@ -53,7 +53,7 @@ public class ButtonManager : MonoBehaviour
 
 	public void ButtonClicked()
 	{
-		waveSpawnner.SpawnNextWave();
+		waveSpawner.SpawnNextWave();
 	}
 	
 }
