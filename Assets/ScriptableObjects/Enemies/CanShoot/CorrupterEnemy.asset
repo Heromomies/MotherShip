@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a30d0a2f053c4e4cab1cdd59f30fd1a, type: 3}
+  m_Script: {fileID: 11500000, guid: ee897e27440f0fc408c0b7ce371428e6, type: 3}
   m_Name: CorrupterEnemy
   m_EditorClassIdentifier: 
   speed: 3
@@ -17,5 +17,7 @@ MonoBehaviour:
   health: 1
   isShield: 0
   canShoot: 1
-  spawnAnotherEnemyOnDie: 1
+  distanceFromMotherShipToStopAndShoot: 8
+  fireRate: 5
+  spawnAnotherEnemyOnDie: 0
   nameEnemyToSpawn: Worker

@@ -18,7 +18,6 @@ public class MinionsCollider : MonoBehaviour
         if (other.CompareTag("Enemy"))
         {
             other.GetComponent<IDamageable>().TakeDamage(damage);
-            gameObject.GetComponent<IDamageable>().TakeDamage(other.GetComponent<Enemy>().statsBase.damage);
         }
     }
 }
