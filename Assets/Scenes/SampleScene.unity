@@ -2195,6 +2195,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!198 &1842514109 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 157172047, guid: e8c471c688f9bac49b2e035459b171f2, type: 3}
+  m_PrefabInstance: {fileID: 8215103030581640927}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1848837031 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2683785563021468378, guid: 6c7e5000cb2ab134ca00ddc406df5510, type: 3}
@@ -2486,8 +2491,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0c8e09244807e046bed26ab320f5c9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  statsBase: {fileID: 0}
-  explosionSystem: {fileID: 0}
+  statsBase: {fileID: 11400000, guid: 5610091bfdf0575418692bec6a9dad84, type: 2}
+  explosionSystem: {fileID: 1842514109}
 --- !u!1 &2035318607 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1405612778805523759, guid: 7402267583a365444b2fcca29c8e6c8a, type: 3}

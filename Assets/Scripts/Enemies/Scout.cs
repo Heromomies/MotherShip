@@ -12,8 +12,9 @@ public class Scout : Enemy, IDamageable
 
     private string nameEnemyToSpawn;
     private bool canSpawnEnemyOnDie;
+    private bool canShoot;
     
-    private Transform _target;
+    private Transform target;
     public float CurrentHealth { get; private set; }
     
     private void Start()
@@ -23,17 +24,18 @@ public class Scout : Enemy, IDamageable
         damage = statsBase.damage;
         speed = statsBase.speed;
         canSpawnEnemyOnDie = statsBase.spawnAnotherEnemyOnDie;
+        canShoot = statsBase.canShoot;
         if (canSpawnEnemyOnDie)
         {
             nameEnemyToSpawn = statsBase.nameEnemyToSpawn;
         }
 
-        _target = MotherShipManager.Instance.transform;
+        target = MotherShipManager.Instance.transform;
     }
 
     void Update()
     {
-        transform.position = Vector2.MoveTowards(transform.position, _target.position, speed * Time.deltaTime);
+        transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
     }
 
     private void OnTriggerEnter2D(Collider2D other)

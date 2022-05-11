@@ -11,6 +11,7 @@ public class EnemiesScriptableObject : ScriptableObject
    public int health;
 
    public bool isShield;
+   public bool canShoot;
    public bool spawnAnotherEnemyOnDie;
    public string nameEnemyToSpawn;
 }
