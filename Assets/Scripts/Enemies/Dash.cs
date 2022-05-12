@@ -11,6 +11,8 @@ public class Dash : MonoBehaviour, IDamageable
     private float speed;
     private float damage;
     private float distanceFromMotherShipToStopAndShoot;
+    private float numberDivideToDash;
+    private float timeBeforeDash;
    
     private List<string> nameEnemyToSpawn;
     private List<Transform> spawnPointsEnemy = new List<Transform>();
@@ -29,8 +31,10 @@ public class Dash : MonoBehaviour, IDamageable
         speed = statsBase.speed;
         currentHealth = statsBase.health;
         canSpawnEnemyOnDie = statsBase.spawnAnotherEnemyOnDie;
-        distanceFromMotherShipToStopAndShoot = statsBase.distanceFromMotherShipToStopAndShoot;
+        distanceFromMotherShipToStopAndShoot = statsBase.distanceFromMotherShipToStopAndDash;
         spawnPointsEnemy = statsBase.spawnPoints;
+        numberDivideToDash = statsBase.numberDivideToDash;
+        timeBeforeDash = statsBase.timeBeforeDash;
         
         target = MotherShipManager.Instance.transform;
         
@@ -48,18 +52,24 @@ public class Dash : MonoBehaviour, IDamageable
     void MovementShooter()
     {
         var dist = Vector2.Distance(transform.position, MotherShipManager.Instance.transform.position);
-        if (dist > distanceFromMotherShipToStopAndShoot)
+        if (dist > distanceFromMotherShipToStopAndShoot || isDash)
         {
             transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
         }
         else if(!isDash && dist <= distanceFromMotherShipToStopAndShoot)
         {
-            transform.DOMove(transform.position - target.position, 0.5f);
-            
-            isDash = true;
+            StartCoroutine(TimeBeforeDashing());
         }
     }
 
+    private IEnumerator TimeBeforeDashing()
+    {
+        yield return new WaitForSeconds(timeBeforeDash);
+        
+        transform.DOMove(target.position / numberDivideToDash, 0.5f);
+        isDash = true;
+    }
+    
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("MotherShip"))

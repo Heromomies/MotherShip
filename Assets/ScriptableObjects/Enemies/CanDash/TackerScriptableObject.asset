@@ -14,9 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2
   damage: 1
-  health: 8
+  health: 2
   isShield: 0
-  distanceFromMotherShipToStopAndShoot: 5
+  distanceFromMotherShipToStopAndDash: 6
+  timeBeforeDash: 1
+  numberDivideToDash: 4
   spawnPoints: []
   spawnAnotherEnemyOnDie: 0
   enemiesToSpawn: []
