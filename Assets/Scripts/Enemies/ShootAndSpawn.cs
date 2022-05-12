@@ -2,18 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Shooter : MonoBehaviour, IDamageable
+public class ShootAndSpawn : MonoBehaviour, IDamageable
 {
     public ParticleSystem explosionSystem;
-    public ShootEnemyScriptableObject shootBase;
+    public ShootAndSpawnEnemyScriptableObject shootBase;
     public List<Transform> spawnPointsEnemyOnShoot;
-    public bool isSpawner;
+    public List<Transform> spawnPointsEnemyOnDie;
+    public List<Transform> spawnPointsEnemyOnRate;
     
     private float speed;
     private float damage;
     private float distanceFromMotherShipToStopAndShoot;
     private float fireRate;
+    public float fireRateToSpawnEnemies;
+    
     private List<string> nameEnemyToSpawn;
+    private bool canSpawnEnemyOnDie;
     private bool isShooting;
     
     private Transform target;
@@ -26,9 +30,11 @@ public class Shooter : MonoBehaviour, IDamageable
         damage = shootBase.damage;
         speed = shootBase.speed;
         currentHealth = shootBase.health;
+        canSpawnEnemyOnDie = shootBase.spawnAnotherEnemyOnDie;
         distanceFromMotherShipToStopAndShoot = shootBase.distanceFromMotherShipToStopAndShoot;
         fireRate = shootBase.fireRateToShoot;
-
+        fireRateToSpawnEnemies = shootBase.fireRateToSpawnEnemies;
+        
         target = MotherShipManager.Instance.transform;
         
         if (shootBase.enemiesToSpawn.Count > 0)
@@ -36,12 +42,10 @@ public class Shooter : MonoBehaviour, IDamageable
             nameEnemyToSpawn = shootBase.enemiesToSpawn;
         }
 
-        if (isSpawner)
+        if (spawnPointsEnemyOnRate.Count > 0)
         {
-            isShooting = true; 
-            InvokeRepeating(nameof(LaunchBullet), 0, fireRate);
+            InvokeRepeating(nameof(SpawnEnemy), 0, fireRateToSpawnEnemies);
         }
-        
     }
 
     void Update()
@@ -62,17 +66,21 @@ public class Shooter : MonoBehaviour, IDamageable
             InvokeRepeating(nameof(LaunchBullet), 0, fireRate);
         }
     }
+
+    void SpawnEnemy()
+    {
+        for (int i = 0; i < nameEnemyToSpawn.Count; i++)
+        {
+            PoolManager.Instance.SpawnObjectFromPool(nameEnemyToSpawn[i], spawnPointsEnemyOnRate[i].position, Quaternion.identity, null);
+        }
+    }
     
     void LaunchBullet()
     {
-        var randomPoint = Random.Range(0, spawnPointsEnemyOnShoot.Count);
-        
         for (int i = 0; i < nameEnemyToSpawn.Count; i++)
         {
-            PoolManager.Instance.SpawnObjectFromPool(nameEnemyToSpawn[i], spawnPointsEnemyOnShoot[randomPoint].position, Quaternion.identity, null);
+            PoolManager.Instance.SpawnObjectFromPool(nameEnemyToSpawn[i], spawnPointsEnemyOnShoot[i].position, Quaternion.identity, null);
         }
-        
-        Debug.Log("Spawn Enemy");
     }
     
     private void OnTriggerEnter2D(Collider2D other)
@@ -104,9 +112,17 @@ public class Shooter : MonoBehaviour, IDamageable
         explosionSystem.transform.position = transform.position;
         explosionSystem.Play();
 
+        if (canSpawnEnemyOnDie)
+        {
+            for (int i = 0; i < nameEnemyToSpawn.Count; i++)
+            {
+                PoolManager.Instance.SpawnObjectFromPool(nameEnemyToSpawn[i], spawnPointsEnemyOnDie[i].position, Quaternion.identity, null);
+            } 
+        }
+
         CancelInvoke();
 
         gameObject.SetActive(false);
     }
-    
+
 }

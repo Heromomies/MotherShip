@@ -10,6 +10,8 @@ public class MotherShipManager : MonoBehaviour
     public GameObject prefabMinion;
     public Transform transformSpawnMinion;
 
+    public ParticleSystem particleOnSpawnMinion;
+    
     public MotherShipHealth health;
 
     public int numberMinionsMax;
@@ -34,6 +36,8 @@ public class MotherShipManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        particleOnSpawnMinion = Instantiate(particleOnSpawnMinion, transformSpawnMinion.position, Quaternion.identity);
+        particleOnSpawnMinion.Stop();
         _timeLeftBeforeSpawn = timeBeforeSpawnMinion;
         sliderSpawner.maxValue = timeBeforeSpawnMinion;
         sliderSpawner.value = timeBeforeSpawnMinion;
@@ -51,7 +55,9 @@ public class MotherShipManager : MonoBehaviour
             {
                 GameObject minion = Instantiate(prefabMinion,transformSpawnMinion.position, Quaternion.identity);
                 listMinions.Add(minion);
-            
+    
+                particleOnSpawnMinion.Play();
+               
                 _timeLeftBeforeSpawn = timeBeforeSpawnMinion;
                 sliderSpawner.maxValue = timeBeforeSpawnMinion;
 

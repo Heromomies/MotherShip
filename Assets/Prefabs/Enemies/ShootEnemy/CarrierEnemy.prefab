@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5806355236241469122}
   - component: {fileID: 1438513854}
   - component: {fileID: 2866020952558724254}
+  - component: {fileID: 4477922595088483268}
   m_Layer: 0
   m_Name: CarrierEnemy
   m_TagString: Enemy
@@ -131,3 +132,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &4477922595088483268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5806355236241469125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5543a03074d97ff49bfe5f4e11a69447, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosionSystem: {fileID: 4314723461917522873, guid: 827937b46a923504fa3f01eef8073f81, type: 3}
+  shootBase: {fileID: 11400000, guid: 8d3a67cd52df36f4c90ff409de92f793, type: 2}
+  spawnPointsEnemyOnShoot: []
+  isSpawner: 1

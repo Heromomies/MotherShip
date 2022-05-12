@@ -140,6 +140,7 @@ MonoBehaviour:
   timeBeforeSpawnMinion: 3
   prefabMinion: {fileID: 8215103030101275868, guid: e8c471c688f9bac49b2e035459b171f2, type: 3}
   transformSpawnMinion: {fileID: 0}
+  particleOnSpawnMinion: {fileID: 4590336919862162997, guid: dc5343a71bbb6a94db0548ee0bfd236d, type: 3}
   health: {fileID: 2665894723888643139}
   numberMinionsMax: 4
   listMinions:
