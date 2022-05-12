@@ -16,8 +16,10 @@ MonoBehaviour:
   damage: 1
   health: 1
   isShield: 0
-  canShoot: 1
   distanceFromMotherShipToStopAndShoot: 8
   fireRate: 5
+  spawnPoints:
+  - {fileID: 2511469180968909223, guid: 1206f1cccb80b514a997eebe1fc4f2b9, type: 3}
   spawnAnotherEnemyOnDie: 0
-  nameEnemyToSpawn: Worker
+  enemiesToSpawn:
+  - WorkerEnemy

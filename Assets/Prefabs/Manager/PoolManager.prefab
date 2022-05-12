@@ -44,6 +44,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pools:
-  - poolTag: Worker
+  - poolTag: WorkerEnemy
     prefab: {fileID: 6265012000951325452, guid: 97c6e7e808a8d8f4fa273d9ff4715f9d, type: 3}
     poolSize: 10

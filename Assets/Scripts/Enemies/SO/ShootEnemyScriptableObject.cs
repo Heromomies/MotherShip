@@ -10,10 +10,10 @@ public class ShootEnemyScriptableObject : ScriptableObject
 	public int health;
 
 	public bool isShield;
-	public bool canShoot;
 	public float distanceFromMotherShipToStopAndShoot;
 	public float fireRate;
-
+	public List<Transform> spawnPoints;
+	
 	public bool spawnAnotherEnemyOnDie;
-	public string nameEnemyToSpawn;
+	public List<string> enemiesToSpawn;
 }

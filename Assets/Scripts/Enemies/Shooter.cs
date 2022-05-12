@@ -12,9 +12,9 @@ public class Shooter : MonoBehaviour, IDamageable
     private float distanceFromMotherShipToStopAndShoot;
     private float fireRate;
     
-    private string nameEnemyToSpawn;
+    private List<string> nameEnemyToSpawn;
+    private List<Transform> spawnPointsEnemy = new List<Transform>();
     private bool canSpawnEnemyOnDie;
-    private bool canShoot;
     private bool isShooting;
     
     private Transform target;
@@ -28,42 +28,39 @@ public class Shooter : MonoBehaviour, IDamageable
         speed = statsBase.speed;
         currentHealth = statsBase.health;
         canSpawnEnemyOnDie = statsBase.spawnAnotherEnemyOnDie;
-        canShoot = statsBase.canShoot;
         distanceFromMotherShipToStopAndShoot = statsBase.distanceFromMotherShipToStopAndShoot;
         fireRate = statsBase.fireRate;
-       
-        if (canSpawnEnemyOnDie || canShoot)
-        {
-            nameEnemyToSpawn = statsBase.nameEnemyToSpawn;
-        }
-
+        spawnPointsEnemy = statsBase.spawnPoints;
+        
         target = MotherShipManager.Instance.transform;
+        
+        if (statsBase.enemiesToSpawn.Count > 0)
+        {
+            nameEnemyToSpawn = statsBase.enemiesToSpawn;
+        }
     }
 
     void Update()
     {
-        if (!canShoot)
+        var dist = Vector2.Distance(transform.position, MotherShipManager.Instance.transform.position);
+        if (dist > distanceFromMotherShipToStopAndShoot)
         {
             transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
         }
-        else
+        else if(!isShooting && dist <= distanceFromMotherShipToStopAndShoot)
         {
-            var dist = Vector2.Distance(transform.position, MotherShipManager.Instance.transform.position);
-            if (dist > distanceFromMotherShipToStopAndShoot)
-            {
-                transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
-            }
-            else if(!isShooting && dist <= distanceFromMotherShipToStopAndShoot)
-            {
-                isShooting = true;
-                InvokeRepeating(nameof(LaunchBullet), 0, fireRate);
-            }
+            isShooting = true; 
+            InvokeRepeating(nameof(LaunchBullet), 0, fireRate);
         }
+        
     }
 
     void LaunchBullet()
     {
-        PoolManager.Instance.SpawnObjectFromPool(nameEnemyToSpawn, transform.position, Quaternion.identity, null);
+        for (int i = 0; i < nameEnemyToSpawn.Count; i++)
+        {
+            PoolManager.Instance.SpawnObjectFromPool(nameEnemyToSpawn[i], transform.position, Quaternion.identity, null);
+        }
     }
     
     private void OnTriggerEnter2D(Collider2D other)
@@ -97,14 +94,14 @@ public class Shooter : MonoBehaviour, IDamageable
 
         if (canSpawnEnemyOnDie)
         {
-            PoolManager.Instance.SpawnObjectFromPool(nameEnemyToSpawn, GameManager.Instance.spawnEnemies.position, Quaternion.identity, null);
+            for (int i = 0; i < nameEnemyToSpawn.Count; i++)
+            {
+                PoolManager.Instance.SpawnObjectFromPool(nameEnemyToSpawn[i], spawnPointsEnemy[i].position, Quaternion.identity, null);
+            } 
         }
 
-        if (canShoot)
-        {
-            CancelInvoke();
-        }
-        
+        CancelInvoke();
+
         gameObject.SetActive(false);
     }
     
