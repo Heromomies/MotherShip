@@ -18,8 +18,20 @@ public class Wave
 public class WaveSpawner : MonoBehaviour
 {
 	public Wave[] waves;
-	public Transform[] spawnPoints;
+	public List<Transform> spawnPoints;
 
+	#region Singleton
+
+	private static WaveSpawner _waveSpawner;
+	public static WaveSpawner Instance => _waveSpawner;
+
+	private void Awake()
+	{
+		_waveSpawner = this;
+	}
+
+	#endregion
+	
 	private Wave currentWave;
 	private int currentWaveNumber;
 	private float nextSpawnTime;
@@ -76,7 +88,7 @@ public class WaveSpawner : MonoBehaviour
 		if (canSpawn && nextSpawnTime < Time.time)
 		{
 			GameObject randomEnemy = currentWave.typeOfEnemies[Random.Range(0, currentWave.typeOfEnemies.Length)];
-			Transform randomPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
+			Transform randomPoint = spawnPoints[Random.Range(0, spawnPoints.Count)];
 			Instantiate(randomEnemy, randomPoint.position, Quaternion.identity);
 			currentWave.numberOfEnemies--;
 			nextSpawnTime = Time.time + currentWave.spawnInterval;

@@ -12,6 +12,6 @@ public class ShootEnemyScriptableObject : ScriptableObject
 	public bool isShield;
 	public float distanceFromMotherShipToStopAndShoot;
 	public float fireRateToShoot;
-	
+
 	public List<string> enemiesToSpawn;
 }

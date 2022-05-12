@@ -9,16 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f05e63fbc474ef6429ecf2b6e752630c, type: 3}
-  m_Name: TackerScriptableObject
+  m_Script: {fileID: 11500000, guid: 2a30d0a2f053c4e4cab1cdd59f30fd1a, type: 3}
+  m_Name: ScourgeEnemy
   m_EditorClassIdentifier: 
-  speed: 2
+  speed: 3
   damage: 1
-  health: 2
+  health: 1
   isShield: 0
-  distanceFromMotherShipToStopAndDash: 6
-  timeBeforeDash: 1
-  numberDivideToDash: 4
-  spawnPoints: []
   spawnAnotherEnemyOnDie: 0
-  enemiesToSpawn: []
+  nameEnemyToSpawn: 

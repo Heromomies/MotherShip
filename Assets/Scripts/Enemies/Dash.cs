@@ -7,6 +7,11 @@ public class Dash : MonoBehaviour, IDamageable
 {
     public ParticleSystem explosionSystem;
     public DashEnemyScriptableObject statsBase;
+
+    [Header("FEEDBACK SETTINGS")] public Color colorToChange;
+    public Color baseColor;
+    public float durationFadeIn, durationFadeOut, durationShake, strengthShake;
+    
     
     private float speed;
     private float damage;
@@ -21,6 +26,7 @@ public class Dash : MonoBehaviour, IDamageable
     
     private Transform target;
     private float currentHealth;
+    private SpriteRenderer spriteRenderer;
     
     // Start is called before the first frame update
     void Start()
@@ -35,6 +41,8 @@ public class Dash : MonoBehaviour, IDamageable
         spawnPointsEnemy = statsBase.spawnPoints;
         numberDivideToDash = statsBase.numberDivideToDash;
         timeBeforeDash = statsBase.timeBeforeDash;
+
+        spriteRenderer = GetComponent<SpriteRenderer>(); //TODO GetComponentInChildren in the future
         
         target = MotherShipManager.Instance.transform;
         
@@ -64,10 +72,14 @@ public class Dash : MonoBehaviour, IDamageable
 
     private IEnumerator TimeBeforeDashing()
     {
-        yield return new WaitForSeconds(timeBeforeDash);
+        spriteRenderer.DOColor(colorToChange, durationFadeIn);
+        transform.DOShakePosition(durationShake, strengthShake, 5, 0);
         
-        transform.DOMove(target.position / numberDivideToDash, 0.5f);
+        yield return new WaitForSeconds(timeBeforeDash);
         isDash = true;
+        transform.DOMove(target.position / numberDivideToDash, 0.2f);
+        
+        spriteRenderer.DOColor(baseColor, durationFadeOut);
     }
     
     private void OnTriggerEnter2D(Collider2D other)

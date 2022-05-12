@@ -7,8 +7,7 @@ public class Shooter : MonoBehaviour, IDamageable
     public ParticleSystem explosionSystem;
     public ShootEnemyScriptableObject shootBase;
     public List<Transform> spawnPointsEnemyOnShoot;
-    public bool isSpawner;
-    
+   
     private float speed;
     private float damage;
     private float distanceFromMotherShipToStopAndShoot;
@@ -36,12 +35,10 @@ public class Shooter : MonoBehaviour, IDamageable
             nameEnemyToSpawn = shootBase.enemiesToSpawn;
         }
 
-        if (isSpawner)
+        if (spawnPointsEnemyOnShoot.Count == 0)
         {
-            isShooting = true; 
-            InvokeRepeating(nameof(LaunchBullet), 0, fireRate);
+            spawnPointsEnemyOnShoot = WaveSpawner.Instance.spawnPoints;
         }
-        
     }
 
     void Update()
@@ -65,14 +62,11 @@ public class Shooter : MonoBehaviour, IDamageable
     
     void LaunchBullet()
     {
-        var randomPoint = Random.Range(0, spawnPointsEnemyOnShoot.Count);
-        
         for (int i = 0; i < nameEnemyToSpawn.Count; i++)
         {
+            var randomPoint = Random.Range(0, spawnPointsEnemyOnShoot.Count);
             PoolManager.Instance.SpawnObjectFromPool(nameEnemyToSpawn[i], spawnPointsEnemyOnShoot[randomPoint].position, Quaternion.identity, null);
         }
-        
-        Debug.Log("Spawn Enemy");
     }
     
     private void OnTriggerEnter2D(Collider2D other)
