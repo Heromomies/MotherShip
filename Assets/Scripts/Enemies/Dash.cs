@@ -1,26 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 
-public class Shooter : MonoBehaviour, IDamageable
+public class Dash : MonoBehaviour, IDamageable
 {
     public ParticleSystem explosionSystem;
-    public ShootEnemyScriptableObject statsBase;
+    public DashEnemyScriptableObject statsBase;
     
     private float speed;
     private float damage;
     private float distanceFromMotherShipToStopAndShoot;
-    private float fireRate;
-    
+   
     private List<string> nameEnemyToSpawn;
     private List<Transform> spawnPointsEnemy = new List<Transform>();
     private bool canSpawnEnemyOnDie;
-    private bool isShooting;
+    private bool isDash;
     
     private Transform target;
     private float currentHealth;
     
-    private void Start()
+    // Start is called before the first frame update
+    void Start()
     {
         ParticleSystem eS = Instantiate(explosionSystem);
         explosionSystem = eS;
@@ -29,7 +30,6 @@ public class Shooter : MonoBehaviour, IDamageable
         currentHealth = statsBase.health;
         canSpawnEnemyOnDie = statsBase.spawnAnotherEnemyOnDie;
         distanceFromMotherShipToStopAndShoot = statsBase.distanceFromMotherShipToStopAndShoot;
-        fireRate = statsBase.fireRate;
         spawnPointsEnemy = statsBase.spawnPoints;
         
         target = MotherShipManager.Instance.transform;
@@ -52,21 +52,14 @@ public class Shooter : MonoBehaviour, IDamageable
         {
             transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
         }
-        else if(!isShooting && dist <= distanceFromMotherShipToStopAndShoot)
+        else if(!isDash && dist <= distanceFromMotherShipToStopAndShoot)
         {
-            isShooting = true; 
-            InvokeRepeating(nameof(LaunchBullet), 0, fireRate);
+            transform.DOMove(transform.position - target.position, 0.5f);
+            
+            isDash = true;
         }
     }
-    
-    void LaunchBullet()
-    {
-        for (int i = 0; i < nameEnemyToSpawn.Count; i++)
-        {
-            PoolManager.Instance.SpawnObjectFromPool(nameEnemyToSpawn[i], transform.position, Quaternion.identity, null);
-        }
-    }
-    
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("MotherShip"))
@@ -108,5 +101,4 @@ public class Shooter : MonoBehaviour, IDamageable
 
         gameObject.SetActive(false);
     }
-    
 }

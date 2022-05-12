@@ -22,4 +22,4 @@ MonoBehaviour:
   - {fileID: 2511469180968909223, guid: 1206f1cccb80b514a997eebe1fc4f2b9, type: 3}
   spawnAnotherEnemyOnDie: 0
   enemiesToSpawn:
-  - WorkerEnemy
+  - {fileID: 6265012000951325452, guid: 97c6e7e808a8d8f4fa273d9ff4715f9d, type: 3}
