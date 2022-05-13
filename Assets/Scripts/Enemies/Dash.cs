@@ -7,7 +7,8 @@ public class Dash : MonoBehaviour, IDamageable
 {
     public ParticleSystem explosionSystem;
     public DashEnemyScriptableObject statsBase;
-
+    public Transform parentRenderer;
+    
     [Header("FEEDBACK SETTINGS")] public Color colorToChange;
     public Color baseColor;
     public float durationFadeIn, durationFadeOut, durationShake, strengthShake;
@@ -42,7 +43,7 @@ public class Dash : MonoBehaviour, IDamageable
         numberDivideToDash = statsBase.numberDivideToDash;
         timeBeforeDash = statsBase.timeBeforeDash;
 
-        spriteRenderer = GetComponent<SpriteRenderer>(); //TODO GetComponentInChildren in the future
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>(); //TODO GetComponentInChildren in the future
         
         target = MotherShipManager.Instance.transform;
         
@@ -59,7 +60,14 @@ public class Dash : MonoBehaviour, IDamageable
 
     void MovementShooter()
     {
-        var dist = Vector2.Distance(transform.position, MotherShipManager.Instance.transform.position);
+        var tPosition = transform.position;
+        Vector3 diff = target.position - tPosition;
+        diff.Normalize();
+ 
+        float rotZ = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
+        parentRenderer.rotation = Quaternion.Euler(0f, 0f, rotZ - 90);
+        
+        var dist = Vector2.Distance(tPosition, target.position);
         if (dist > distanceFromMotherShipToStopAndShoot || isDash)
         {
             transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
