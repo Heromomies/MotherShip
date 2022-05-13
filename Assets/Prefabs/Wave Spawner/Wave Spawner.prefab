@@ -49,33 +49,43 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waves:
-  - waveName: Wave 1
-    numberOfEnemies: 2
+  - waveName: Wave One
+    numberOfEnemies: 8
     typeOfEnemies:
+    - {fileID: 4616004317972769107, guid: 8260d55e6a0d59d4492b2c37dd57c02d, type: 3}
     - {fileID: 6571802122395843798, guid: 177199034adf4604d9aaf8d991d2c008, type: 3}
-    - {fileID: 8025395330359451590, guid: 238a01a1996d0b946a69a61fd383b0fb, type: 3}
-    - {fileID: 3796387057596072997, guid: 8260d55e6a0d59d4492b2c37dd57c02d, type: 3}
-    - {fileID: 6265012000951325452, guid: 97c6e7e808a8d8f4fa273d9ff4715f9d, type: 3}
+    - {fileID: 2511469180968909222, guid: 1206f1cccb80b514a997eebe1fc4f2b9, type: 3}
+    spawnInterval: 1
+    buttonsToSpawn:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+  - waveName: Wave Two
+    numberOfEnemies: 13
+    typeOfEnemies:
+    - {fileID: 5806355236241469125, guid: 161c43f3f1d45cd4ba5671f3df6fff12, type: 3}
+    - {fileID: 8716453826510086929, guid: 9e0c53386dbf51942aa423cb8a320cad, type: 3}
+    - {fileID: 7788485836284774755, guid: de6be94ce1ce7e249bb8238e5ecb6a30, type: 3}
     spawnInterval: 2
     buttonsToSpawn:
     - {fileID: 0}
     - {fileID: 0}
     - {fileID: 0}
-  - waveName: Wave 2
-    numberOfEnemies: 3
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+  - waveName: Wave Three
+    numberOfEnemies: 15
     typeOfEnemies:
-    - {fileID: 3796387057596072997, guid: 8260d55e6a0d59d4492b2c37dd57c02d, type: 3}
+    - {fileID: 1683909960298071419, guid: 36c783a14499a4c45be51f9db1c2ee90, type: 3}
+    - {fileID: 8025395330359451590, guid: 238a01a1996d0b946a69a61fd383b0fb, type: 3}
     - {fileID: 6265012000951325452, guid: 97c6e7e808a8d8f4fa273d9ff4715f9d, type: 3}
     spawnInterval: 1
     buttonsToSpawn:
     - {fileID: 0}
     - {fileID: 0}
-  - waveName: Wave 3
-    numberOfEnemies: 1
-    typeOfEnemies:
-    - {fileID: 6571802122395843798, guid: 177199034adf4604d9aaf8d991d2c008, type: 3}
-    spawnInterval: 0
-    buttonsToSpawn:
     - {fileID: 0}
     - {fileID: 0}
     - {fileID: 0}
