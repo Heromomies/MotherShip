@@ -61,7 +61,6 @@ public class WaveSpawner : MonoBehaviour
 			GameManager.Instance.canvasButton.SetActive(true);
 			buttonOneToSetActive = currentWave.buttonsToSpawn[Random.Range(0, currentWave.buttonsToSpawn.Count)];
 			currentWave.buttonsToSpawn.Remove(buttonOneToSetActive);
-		
 			buttonTwoToSetActive = currentWave.buttonsToSpawn[Random.Range(0, currentWave.buttonsToSpawn.Count)];
 
 			buttonOneToSetActive.SetActive(true);

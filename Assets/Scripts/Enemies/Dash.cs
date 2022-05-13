@@ -84,10 +84,11 @@ public class Dash : MonoBehaviour, IDamageable
         transform.DOShakePosition(durationShake, strengthShake, 5, 0);
         
         yield return new WaitForSeconds(timeBeforeDash);
-        isDash = true;
+       
         transform.DOMove(target.position / numberDivideToDash, 0.2f);
         
         spriteRenderer.DOColor(baseColor, durationFadeOut);
+        isDash = true;
     }
     
     private void OnTriggerEnter2D(Collider2D other)
