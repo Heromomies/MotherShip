@@ -386,7 +386,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8716453826185754828}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.77, y: 0, z: 0}
+  m_LocalPosition: {x: 0.157, y: 0.05, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8716453826510086928}
@@ -416,7 +416,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8716453826199941413}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.66, y: 0, z: 0}
+  m_LocalPosition: {x: -0.168, y: 0.048, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8716453826510086928}
@@ -431,9 +431,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8716453826510086928}
-  - component: {fileID: 8716453826510086940}
   - component: {fileID: 8716453826510086941}
   - component: {fileID: 8716453826510086942}
+  - component: {fileID: 8856875845300587497}
   m_Layer: 0
   m_Name: ScorpionEnemy
   m_TagString: Enemy
@@ -458,22 +458,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &8716453826510086940
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8716453826510086929}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
 --- !u!50 &8716453826510086941
 Rigidbody2D:
   serializedVersion: 4
@@ -513,3 +497,45 @@ MonoBehaviour:
   spawnPointsEnemyOnShoot:
   - {fileID: 8716453826185754827}
   - {fileID: 8716453826199941412}
+--- !u!68 &8856875845300587497
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8716453826510086929}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: 0.04407016, y: -0.43109196}
+  - {x: -0.056368507, y: -0.43038464}
+  - {x: -0.03256651, y: -0.36067158}
+  - {x: -0.079807624, y: -0.35984778}
+  - {x: -0.29105264, y: -0.24601367}
+  - {x: -0.30103454, y: -0.28280813}
+  - {x: -0.39475212, y: -0.22855887}
+  - {x: -0.34996969, y: -0.21730074}
+  - {x: -0.43556303, y: -0.16754586}
+  - {x: -0.37247705, y: 0.3676135}
+  - {x: -0.17147209, y: 0.047492437}
+  - {x: 0.17515518, y: 0.049795486}
+  - {x: 0.36929452, y: 0.36837775}
+  - {x: 0.43747646, y: -0.17151178}
+  - {x: 0.35047525, y: -0.21606423}
+  - {x: 0.39646444, y: -0.2360533}
+  - {x: 0.30001387, y: -0.288358}
+  - {x: 0.28711775, y: -0.24790892}
+  - {x: 0.078489676, y: -0.36023375}
+  - {x: 0.02527434, y: -0.3615654}
+  - {x: 0.050091706, y: -0.4247376}
+  - {x: 0.046990298, y: -0.43123046}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
