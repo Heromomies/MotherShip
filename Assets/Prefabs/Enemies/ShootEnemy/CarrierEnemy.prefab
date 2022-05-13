@@ -205,9 +205,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5806355236241469123}
-  - component: {fileID: 1438513854}
   - component: {fileID: 2866020952558724254}
   - component: {fileID: 4477922595088483268}
+  - component: {fileID: 728585394525978132}
   m_Layer: 0
   m_Name: CarrierEnemy
   m_TagString: Enemy
@@ -230,32 +230,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &1438513854
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5806355236241469125}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
 --- !u!50 &2866020952558724254
 Rigidbody2D:
   serializedVersion: 4
@@ -293,3 +267,52 @@ MonoBehaviour:
   shootBase: {fileID: 11400000, guid: 8d3a67cd52df36f4c90ff409de92f793, type: 2}
   parentRenderer: {fileID: 1705102269572313369}
   spawnPointsEnemyOnShoot: []
+--- !u!68 &728585394525978132
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5806355236241469125}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -0.11668871, y: -0.42311695}
+  - {x: -0.24574998, y: -0.42003524}
+  - {x: -0.3890379, y: -0.3508358}
+  - {x: -0.2500376, y: 0.095750526}
+  - {x: -0.2679273, y: 0.10880366}
+  - {x: -0.26562965, y: 0.20016676}
+  - {x: -0.22579317, y: 0.20212714}
+  - {x: -0.20615768, y: 0.277337}
+  - {x: -0.2463492, y: 0.28135198}
+  - {x: -0.23849204, y: 0.37737042}
+  - {x: -0.17723349, y: 0.3726311}
+  - {x: -0.16745819, y: 0.42197976}
+  - {x: 0.16880438, y: 0.4234838}
+  - {x: 0.1770552, y: 0.37669986}
+  - {x: 0.24268445, y: 0.37915164}
+  - {x: 0.24711479, y: 0.28069547}
+  - {x: 0.20886967, y: 0.28434718}
+  - {x: 0.22698504, y: 0.19986154}
+  - {x: 0.26402217, y: 0.20142327}
+  - {x: 0.2729832, y: 0.10838112}
+  - {x: 0.25145182, y: 0.10563588}
+  - {x: 0.36826077, y: -0.30293933}
+  - {x: 0.38226184, y: -0.34830734}
+  - {x: 0.23965555, y: -0.42078596}
+  - {x: 0.12738506, y: -0.4256127}
+  - {x: 0.14024109, y: -0.4868807}
+  - {x: 0.0064881686, y: -0.52759165}
+  - {x: -0.1347702, y: -0.4958442}
+  - {x: -0.115337096, y: -0.42927867}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0

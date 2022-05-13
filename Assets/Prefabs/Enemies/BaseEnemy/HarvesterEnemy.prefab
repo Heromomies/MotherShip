@@ -206,8 +206,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6571802122395843792}
   - component: {fileID: 6571802122395843795}
-  - component: {fileID: 6571802122395843794}
   - component: {fileID: 6571802122395843793}
+  - component: {fileID: 5256105770027159128}
   m_Layer: 0
   m_Name: HarvesterEnemy
   m_TagString: Enemy
@@ -251,32 +251,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &6571802122395843794
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6571802122395843798}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 0.5}
-    newSize: {x: 1, y: 0.5}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 0.5}
-  m_EdgeRadius: 0
 --- !u!114 &6571802122395843793
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -292,3 +266,35 @@ MonoBehaviour:
   explosionSystem: {fileID: 4314723461917522873, guid: 827937b46a923504fa3f01eef8073f81, type: 3}
   statsBase: {fileID: 11400000, guid: ac8f4772822b2b3479df81fa7c22eb30, type: 2}
   parentRenderer: {fileID: 2200030646014294206}
+--- !u!68 &5256105770027159128
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6571802122395843798}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -0.3888043, y: -0.35074422}
+  - {x: -0.1600423, y: 0.42800495}
+  - {x: 0.16847885, y: 0.4280258}
+  - {x: 0.39081997, y: -0.34379598}
+  - {x: 0.24315937, y: -0.42053634}
+  - {x: 0.11801819, y: -0.42429078}
+  - {x: 0.13715386, y: -0.49176735}
+  - {x: 0.0038412642, y: -0.52875936}
+  - {x: -0.13950087, y: -0.49026245}
+  - {x: -0.122926705, y: -0.42244527}
+  - {x: -0.24554598, y: -0.42287812}
+  - {x: -0.38570476, y: -0.35312036}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
