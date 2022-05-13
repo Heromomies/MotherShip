@@ -9,15 +9,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee897e27440f0fc408c0b7ce371428e6, type: 3}
-  m_Name: CorrupterEnemy
+  m_Script: {fileID: 11500000, guid: f05e63fbc474ef6429ecf2b6e752630c, type: 3}
+  m_Name: SpineEnemy
   m_EditorClassIdentifier: 
   speed: 3
-  damage: 1
+  damage: 2
   health: 1
   isShield: 0
-  distanceFromMotherShipToStopAndShoot: 8
-  fireRateToShoot: 5
-  enemiesToSpawn:
-  - WorkerEnemy
-  - WorkerEnemy
+  distanceFromMotherShipToStopAndDash: 6
+  timeBeforeDash: 1.5
+  numberDivideToDash: 10
+  spawnPoints: []
+  spawnAnotherEnemyOnDie: 0
+  enemiesToSpawn: []

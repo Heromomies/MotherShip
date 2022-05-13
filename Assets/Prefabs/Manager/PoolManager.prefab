@@ -47,3 +47,6 @@ MonoBehaviour:
   - poolTag: WorkerEnemy
     prefab: {fileID: 6265012000951325452, guid: 97c6e7e808a8d8f4fa273d9ff4715f9d, type: 3}
     poolSize: 10
+  - poolTag: PsSpawnCircle
+    prefab: {fileID: 4590336919862162995, guid: dc5343a71bbb6a94db0548ee0bfd236d, type: 3}
+    poolSize: 1
