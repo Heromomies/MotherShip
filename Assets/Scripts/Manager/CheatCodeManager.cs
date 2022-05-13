@@ -27,7 +27,7 @@ public class CheatCodeManager : MonoBehaviour
       
       if (Input.GetKeyDown(KeyCode.E))
       {
-         PoolManager.Instance.SpawnObjectFromPool("Worker", transform.position, Quaternion.identity, null);
+         PoolManager.Instance.SpawnObjectFromPool("WorkerEnemy", transform.position, Quaternion.identity, null);
       }
    }
 }

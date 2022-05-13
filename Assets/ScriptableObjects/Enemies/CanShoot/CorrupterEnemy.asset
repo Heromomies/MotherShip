@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   damage: 1
-  health: 1
+  health: 2
   isShield: 0
-  distanceFromMotherShipToStopAndShoot: 8
+  distanceFromMotherShipToStopAndShoot: 4
   fireRateToShoot: 5
   enemiesToSpawn:
   - WorkerEnemy

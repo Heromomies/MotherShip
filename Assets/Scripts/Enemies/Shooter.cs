@@ -6,6 +6,8 @@ public class Shooter : MonoBehaviour, IDamageable
 {
     public ParticleSystem explosionSystem;
     public ShootEnemyScriptableObject shootBase;
+    public Transform parentRenderer;
+    
     public List<Transform> spawnPointsEnemyOnShoot;
    
     private float speed;
@@ -48,7 +50,15 @@ public class Shooter : MonoBehaviour, IDamageable
 
     void MovementShooter()
     {
-        var dist = Vector2.Distance(transform.position, MotherShipManager.Instance.transform.position);
+        var tPosition = transform.position;
+        var targetPosition = target.position;
+        Vector3 diff = targetPosition - tPosition;
+        diff.Normalize();
+ 
+        float rotZ = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
+        parentRenderer.rotation = Quaternion.Euler(0f, 0f, rotZ - 90);
+        
+        var dist = Vector2.Distance(tPosition, targetPosition);
         if (dist > distanceFromMotherShipToStopAndShoot)
         {
             transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);

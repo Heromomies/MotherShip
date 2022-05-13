@@ -7,6 +7,7 @@ public class Scout : MonoBehaviour, IDamageable
 {
     public ParticleSystem explosionSystem;
     public BaseEnemiesScriptableObject statsBase;
+    public Transform parentRenderer;
     
     private float speed;
     private float damage;
@@ -36,7 +37,15 @@ public class Scout : MonoBehaviour, IDamageable
 
     void Update()
     {
-        transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+        var tPosition = transform.position;
+        var targetPosition = target.position;
+        Vector3 diff = targetPosition - tPosition;
+        diff.Normalize();
+ 
+        float rotZ = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
+        parentRenderer.rotation = Quaternion.Euler(0f, 0f, rotZ - 90);
+        
+        transform.position = Vector2.MoveTowards(tPosition, targetPosition, speed * Time.deltaTime);
     }
     
     private void OnTriggerEnter2D(Collider2D other)
