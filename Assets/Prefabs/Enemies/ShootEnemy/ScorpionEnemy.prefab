@@ -353,11 +353,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6520684142099436631}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.272, z: 0.18}
+  m_LocalPosition: {x: 0, y: -0.271, z: 0.18}
   m_LocalScale: {x: 0.12, y: 0.12, z: 0.16}
   m_Children: []
-  m_Father: {fileID: 8716453826510086928}
-  m_RootOrder: 3
+  m_Father: {fileID: 4463881672276128427}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!96 &5459548320223751622
 TrailRenderer:
@@ -430,8 +430,8 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 0.23113209, b: 0.23113209, a: 1}
-      key1: {r: 1, g: 0.3066038, b: 0.3066038, a: 0}
+      key0: {r: 1, g: 0.27058825, b: 0.27058825, a: 1}
+      key1: {r: 1, g: 0.27058825, b: 0.27058825, a: 0}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -498,6 +498,7 @@ Transform:
   - {fileID: 1309709039}
   - {fileID: 1342530373}
   - {fileID: 56031809}
+  - {fileID: 3111460353816256162}
   m_Father: {fileID: 8716453826510086928}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -613,7 +614,6 @@ Transform:
   - {fileID: 4463881672276128427}
   - {fileID: 8716453826185754827}
   - {fileID: 8716453826199941412}
-  - {fileID: 3111460353816256162}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

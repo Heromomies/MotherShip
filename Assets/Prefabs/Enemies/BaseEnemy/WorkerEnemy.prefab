@@ -110,6 +110,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 181787817}
+  - {fileID: 8946664759793047237}
   m_Father: {fileID: 6265012000951325450}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -144,7 +145,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 719186626976751774}
-  - {fileID: 8946664759793047237}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -238,10 +238,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6606281690931637607}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.151, z: 0}
+  m_LocalPosition: {x: 0, y: -0.122, z: 0.07}
   m_LocalScale: {x: 0.12, y: 0.12, z: 0.16}
   m_Children: []
-  m_Father: {fileID: 6265012000951325450}
+  m_Father: {fileID: 719186626976751774}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!96 &4120108810772434421
@@ -285,7 +285,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 0.3
+  m_Time: 0.5
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -294,7 +294,7 @@ TrailRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.11376934
+        value: 0.1442564
         inSlope: -0.22178896
         outSlope: -0.22178896
         tangentMode: 0
@@ -304,18 +304,18 @@ TrailRenderer:
       - serializedVersion: 3
         time: 1
         value: 0
-        inSlope: -0.29904753
-        outSlope: -0.29904753
+        inSlope: 0
+        outSlope: 0
         tangentMode: 0
         weightedMode: 0
-        inWeight: 0.07961786
+        inWeight: 0.15803814
         outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 0.2688679, b: 0.2688679, a: 1}
+      key0: {r: 0.97647065, g: 0.41960788, b: 0.41960788, a: 0.7764706}
       key1: {r: 0.97647065, g: 0.41960788, b: 0.41960788, a: 0}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
