@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4314723461917522873}
   - component: {fileID: 8312619389624568058}
   m_Layer: 0
-  m_Name: PS_minions_die
+  m_Name: PS_ennemies_die
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1361,8 +1361,8 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 1, g: 1, b: 1, a: 1}
-        key1: {r: 0.6509804, g: 0.6509804, b: 0.6509804, a: 0}
+        key0: {r: 1, g: 0, b: 0, a: 1}
+        key1: {r: 1, g: 0.06132078, b: 0.06132078, a: 0}
         key2: {r: 0.6509804, g: 0.6509804, b: 0.6509804, a: 0}
         key3: {r: 0.6509804, g: 0.6509804, b: 0.6509804, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
@@ -1390,8 +1390,8 @@ ParticleSystem:
         m_NumAlphaKeys: 2
       minGradient:
         serializedVersion: 2
-        key0: {r: 0.44705886, g: 0.7568628, b: 0.8705883, a: 1}
-        key1: {r: 0.44705886, g: 0.7568628, b: 0.8705883, a: 0.58431375}
+        key0: {r: 1, g: 0, b: 0.5400758, a: 1}
+        key1: {r: 1, g: 0, b: 0.7260461, a: 0.58431375}
         key2: {r: 0, g: 0, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
