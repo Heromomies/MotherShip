@@ -18,6 +18,9 @@ public class MinionsCollider : MonoBehaviour
         if (other.CompareTag("Enemy"))
         {
             other.GetComponent<IDamageable>().TakeDamage(damage);
+
+            playerStats.particleOnHit = Instantiate(playerStats.particleOnHit, transform.position, Quaternion.identity);
+            playerStats.particleOnHit.Play();
         }
     }
 }
