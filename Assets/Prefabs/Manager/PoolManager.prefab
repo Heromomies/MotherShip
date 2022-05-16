@@ -47,6 +47,36 @@ MonoBehaviour:
   - poolTag: WorkerEnemy
     prefab: {fileID: 6265012000951325452, guid: 97c6e7e808a8d8f4fa273d9ff4715f9d, type: 3}
     poolSize: 10
-  - poolTag: PsSpawnCircle
-    prefab: {fileID: 4590336919862162995, guid: dc5343a71bbb6a94db0548ee0bfd236d, type: 3}
-    poolSize: 1
+  - poolTag: FighterEnemy
+    prefab: {fileID: 1476790898802978239, guid: 7b53a234a250e7e44a2c17746801a90c, type: 3}
+    poolSize: 10
+  - poolTag: ScoutEnemy
+    prefab: {fileID: 4616004317972769107, guid: 8260d55e6a0d59d4492b2c37dd57c02d, type: 3}
+    poolSize: 10
+  - poolTag: ScourgeEnemy
+    prefab: {fileID: 8025395330359451590, guid: 238a01a1996d0b946a69a61fd383b0fb, type: 3}
+    poolSize: 10
+  - poolTag: ViperEnemy
+    prefab: {fileID: 1683909960298071419, guid: 36c783a14499a4c45be51f9db1c2ee90, type: 3}
+    poolSize: 10
+  - poolTag: HarvesterEnemy
+    prefab: {fileID: 6571802122395843798, guid: 177199034adf4604d9aaf8d991d2c008, type: 3}
+    poolSize: 10
+  - poolTag: SpineEnemy
+    prefab: {fileID: 8482151400235060520, guid: a55682151eeaf7840ab36234b372ef80, type: 3}
+    poolSize: 10
+  - poolTag: TackerEnemy
+    prefab: {fileID: 7788485836284774755, guid: de6be94ce1ce7e249bb8238e5ecb6a30, type: 3}
+    poolSize: 10
+  - poolTag: CarrierEnemy
+    prefab: {fileID: 5806355236241469125, guid: 161c43f3f1d45cd4ba5671f3df6fff12, type: 3}
+    poolSize: 10
+  - poolTag: CorrupterEnemy
+    prefab: {fileID: 2511469180968909222, guid: 1206f1cccb80b514a997eebe1fc4f2b9, type: 3}
+    poolSize: 10
+  - poolTag: ScorpionEnemy
+    prefab: {fileID: 8716453826510086929, guid: 9e0c53386dbf51942aa423cb8a320cad, type: 3}
+    poolSize: 10
+  - poolTag: RhinoEnemy
+    prefab: {fileID: 8668863870050478398, guid: 39f43550e1303f44794de97e10233024, type: 3}
+    poolSize: 5

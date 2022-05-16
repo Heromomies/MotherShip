@@ -2749,10 +2749,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9061956895279411989, guid: 818fb85c95511fc4c810007d74198526, type: 3}
-      propertyPath: pools.Array.size
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 818fb85c95511fc4c810007d74198526, type: 3}
 --- !u!1001 &806537466050524710
@@ -3200,7 +3196,7 @@ PrefabInstance:
       objectReference: {fileID: 1570135614}
     - target: {fileID: 2683785562943032281, guid: 6c7e5000cb2ab134ca00ddc406df5510, type: 3}
       propertyPath: waves.Array.data[0].spawnInterval
-      value: 1
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 2683785562943032281, guid: 6c7e5000cb2ab134ca00ddc406df5510, type: 3}
       propertyPath: waves.Array.data[1].spawnInterval
@@ -4190,6 +4186,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1848837031}
     - target: {fileID: 6769550667840952780, guid: 2edaa502e0c00bf44912db98059eab0a, type: 3}
+      propertyPath: particleOnTouch
+      value: 
+      objectReference: {fileID: 4590336919862162997, guid: 4c5bb3f90c255d948b795c902ed51388, type: 3}
+    - target: {fileID: 6769550667840952780, guid: 2edaa502e0c00bf44912db98059eab0a, type: 3}
       propertyPath: sliderExperience
       value: 
       objectReference: {fileID: 0}
@@ -4462,7 +4462,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8215103030101275866, guid: e8c471c688f9bac49b2e035459b171f2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -2.32
       objectReference: {fileID: 0}
     - target: {fileID: 8215103030101275866, guid: e8c471c688f9bac49b2e035459b171f2, type: 3}
       propertyPath: m_LocalPosition.z

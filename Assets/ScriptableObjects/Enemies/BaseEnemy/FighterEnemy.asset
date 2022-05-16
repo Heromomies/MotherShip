@@ -9,10 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22765f00eb9132348b454841f61794bb, type: 3}
-  m_Name: Player
+  m_Script: {fileID: 11500000, guid: 2a30d0a2f053c4e4cab1cdd59f30fd1a, type: 3}
+  m_Name: FighterEnemy
   m_EditorClassIdentifier: 
-  speed: 3
-  health: 1
+  speed: 2
   damage: 1
-  particleOnHit: {fileID: 351823990346656427, guid: f9f972753cd307e46a2879f36e4e6b0e, type: 3}
+  health: 1
+  isShield: 1
+  spawnAnotherEnemyOnDie: 0
+  nameEnemyToSpawn: 

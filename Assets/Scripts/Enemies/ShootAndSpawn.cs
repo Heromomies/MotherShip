@@ -6,17 +6,20 @@ public class ShootAndSpawn : MonoBehaviour, IDamageable
 {
     public ParticleSystem explosionSystem;
     public ShootAndSpawnEnemyScriptableObject shootBase;
-    public List<Transform> spawnPointsEnemyOnShoot;
+    public Transform spawnPointsEnemyOnShoot;
     public List<Transform> spawnPointsEnemyOnDie;
     public List<Transform> spawnPointsEnemyOnRate;
+
+    public Transform parentRenderer;
     
     private float speed;
     private float damage;
     private float distanceFromMotherShipToStopAndShoot;
     private float fireRate;
-    public float fireRateToSpawnEnemies;
+    private float fireRateToSpawnEnemies;
     
     private List<string> nameEnemyToSpawn;
+    private List<string> nameEnemyToSpawnOnShoot;
     private bool canSpawnEnemyOnDie;
     private bool isShooting;
     
@@ -40,6 +43,10 @@ public class ShootAndSpawn : MonoBehaviour, IDamageable
         if (shootBase.enemiesToSpawn.Count > 0)
         {
             nameEnemyToSpawn = shootBase.enemiesToSpawn;
+        } 
+        if (shootBase.enemiesToSpawnOnShoot.Count > 0)
+        {
+            nameEnemyToSpawnOnShoot = shootBase.enemiesToSpawnOnShoot;
         }
 
         if (spawnPointsEnemyOnRate.Count > 0)
@@ -55,6 +62,14 @@ public class ShootAndSpawn : MonoBehaviour, IDamageable
 
     void MovementShooter()
     {
+        var tPosition = transform.position;
+        var targetPosition = target.position;
+        Vector3 diff = targetPosition - tPosition;
+        diff.Normalize();
+ 
+        float rotZ = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
+        parentRenderer.rotation = Quaternion.Euler(0f, 0f, rotZ - 90);
+        
         var dist = Vector2.Distance(transform.position, MotherShipManager.Instance.transform.position);
         if (dist > distanceFromMotherShipToStopAndShoot)
         {
@@ -77,9 +92,9 @@ public class ShootAndSpawn : MonoBehaviour, IDamageable
     
     void LaunchBullet()
     {
-        for (int i = 0; i < nameEnemyToSpawn.Count; i++)
+        for (int i = 0; i < nameEnemyToSpawnOnShoot.Count; i++)
         {
-            PoolManager.Instance.SpawnObjectFromPool(nameEnemyToSpawn[i], spawnPointsEnemyOnShoot[i].position, Quaternion.identity, null);
+            PoolManager.Instance.SpawnObjectFromPool(nameEnemyToSpawnOnShoot[i], spawnPointsEnemyOnShoot.position, Quaternion.identity, null);
         }
     }
     
