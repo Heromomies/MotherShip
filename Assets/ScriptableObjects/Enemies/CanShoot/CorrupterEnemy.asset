@@ -16,7 +16,7 @@ MonoBehaviour:
   damage: 1
   health: 2
   isShield: 0
-  distanceFromMotherShipToStopAndShoot: 4
+  distanceFromMotherShipToStopAndShoot: 6
   fireRateToShoot: 5
   enemiesToSpawn:
   - WorkerEnemy
