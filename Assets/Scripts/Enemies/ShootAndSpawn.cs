@@ -6,7 +6,7 @@ public class ShootAndSpawn : MonoBehaviour, IDamageable
 {
     public ParticleSystem explosionSystem;
     public ShootAndSpawnEnemyScriptableObject shootBase;
-    public Transform spawnPointEnemyOnShoot;
+    public Transform spawnPointsEnemyOnShoot;
     public List<Transform> spawnPointsEnemyOnDie;
     public List<Transform> spawnPointsEnemyOnRate;
 
@@ -94,7 +94,7 @@ public class ShootAndSpawn : MonoBehaviour, IDamageable
     {
         for (int i = 0; i < nameEnemyToSpawnOnShoot.Count; i++)
         {
-            PoolManager.Instance.SpawnObjectFromPool(nameEnemyToSpawnOnShoot[i], spawnPointEnemyOnShoot.position, Quaternion.identity, null);
+            PoolManager.Instance.SpawnObjectFromPool(nameEnemyToSpawnOnShoot[i], spawnPointsEnemyOnShoot.position, Quaternion.identity, null);
         }
     }
     

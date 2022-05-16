@@ -59,9 +59,6 @@ MonoBehaviour:
   - poolTag: ViperEnemy
     prefab: {fileID: 1683909960298071419, guid: 36c783a14499a4c45be51f9db1c2ee90, type: 3}
     poolSize: 10
-  - poolTag: WorkerEnemy
-    prefab: {fileID: 6265012000951325452, guid: 97c6e7e808a8d8f4fa273d9ff4715f9d, type: 3}
-    poolSize: 10
   - poolTag: HarvesterEnemy
     prefab: {fileID: 6571802122395843798, guid: 177199034adf4604d9aaf8d991d2c008, type: 3}
     poolSize: 10
