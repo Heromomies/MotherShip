@@ -14,6 +14,7 @@ public class Scout : MonoBehaviour, IDamageable
 
     private string nameEnemyToSpawn;
     private bool canSpawnEnemyOnDie;
+    private bool isShield;
 
     private Transform target;
     private float currentHealth;
@@ -26,7 +27,8 @@ public class Scout : MonoBehaviour, IDamageable
         speed = statsBase.speed;
         currentHealth = statsBase.health;
         canSpawnEnemyOnDie = statsBase.spawnAnotherEnemyOnDie;
-
+        isShield = statsBase.isShield;
+        
         if (canSpawnEnemyOnDie)
         {
             nameEnemyToSpawn = statsBase.nameEnemyToSpawn;
@@ -64,11 +66,18 @@ public class Scout : MonoBehaviour, IDamageable
     
     public void TakeDamage(float attackDamage)
     {
-        currentHealth -= attackDamage;
-        
-        if (currentHealth <= 0)
+        if (!isShield)
         {
-            Die();
+            currentHealth -= attackDamage;
+        
+            if (currentHealth <= 0)
+            {
+                Die();
+            }
+        }
+        else
+        {
+            isShield = false;
         }
     }
 
