@@ -24,6 +24,7 @@ public class Dash : MonoBehaviour, IDamageable
     private List<Transform> spawnPointsEnemy = new List<Transform>();
     private bool canSpawnEnemyOnDie;
     private bool isDash;
+    private bool isDashing = true;
     
     private Transform target;
     private float currentHealth;
@@ -68,27 +69,29 @@ public class Dash : MonoBehaviour, IDamageable
         parentRenderer.rotation = Quaternion.Euler(0f, 0f, rotZ - 90);
         
         var dist = Vector2.Distance(tPosition, target.position);
-        if (dist > distanceFromMotherShipToStopAndShoot || isDash)
+        if (dist > distanceFromMotherShipToStopAndShoot && isDashing|| isDash && isDashing)
         {
             transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
         }
         else if(!isDash && dist <= distanceFromMotherShipToStopAndShoot)
         {
+            isDashing = false;  
             StartCoroutine(TimeBeforeDashing());
         }
     }
 
     private IEnumerator TimeBeforeDashing()
     {
+        isDash = true;
         spriteRenderer.DOColor(colorToChange, durationFadeIn);
-        transform.DOShakePosition(durationShake, strengthShake, 5, 0);
+        transform.DOShakePosition(durationShake, strengthShake, 90, 0);
         
         yield return new WaitForSeconds(timeBeforeDash);
-       
-        transform.DOMove(target.position / numberDivideToDash, 0.2f);
+        isDashing = true;
+        
+        transform.DOMove(target.position / numberDivideToDash, 0.1f);
         
         spriteRenderer.DOColor(baseColor, durationFadeOut);
-        isDash = true;
     }
     
     private void OnTriggerEnter2D(Collider2D other)
