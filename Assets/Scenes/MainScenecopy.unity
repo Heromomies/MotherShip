@@ -1082,7 +1082,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
-    maxNumParticles: 1000
+    maxNumParticles: 50
     size3D: 0
     rotation3D: 0
     gravityModifier:
@@ -8198,7 +8198,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2683785562943032281, guid: 6c7e5000cb2ab134ca00ddc406df5510, type: 3}
       propertyPath: waves.Array.data[0].numberOfEnemies
-      value: 50
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 2683785562943032281, guid: 6c7e5000cb2ab134ca00ddc406df5510, type: 3}
       propertyPath: waves.Array.data[1].numberOfEnemies
