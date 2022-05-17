@@ -1588,7 +1588,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1570135613}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.66, y: -3.77, z: 0}
+  m_LocalPosition: {x: -3.38, y: -3.77, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1938746019}
@@ -1963,7 +1963,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1759386969}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.04, y: -3.77, z: 0}
+  m_LocalPosition: {x: 3.72, y: -3.77, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1938746019}
@@ -3196,7 +3196,7 @@ PrefabInstance:
       objectReference: {fileID: 1570135614}
     - target: {fileID: 2683785562943032281, guid: 6c7e5000cb2ab134ca00ddc406df5510, type: 3}
       propertyPath: waves.Array.data[0].spawnInterval
-      value: 20
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2683785562943032281, guid: 6c7e5000cb2ab134ca00ddc406df5510, type: 3}
       propertyPath: waves.Array.data[1].spawnInterval
