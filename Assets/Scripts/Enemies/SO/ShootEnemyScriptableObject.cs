@@ -6,8 +6,8 @@ using UnityEngine;
 public class ShootEnemyScriptableObject : ScriptableObject
 {
 	public float speed;
-	public int damage;
-	public int health;
+	public float damage;
+	public float health;
 
 	public bool isShield;
 	public bool canShootFromTheStart;

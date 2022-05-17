@@ -7,8 +7,8 @@ using UnityEngine;
 public class BaseEnemiesScriptableObject : ScriptableObject
 {
    public float speed;
-   public int damage;
-   public int health;
+   public float damage;
+   public float health;
 
    public bool isShield;
 

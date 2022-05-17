@@ -7,8 +7,8 @@ public class DashEnemyScriptableObject : ScriptableObject
 {
 	[Header("BASE STATS")]
     public float speed;
-    public int damage;
-    public int health;
+    public float damage;
+    public float health;
 
     [Header("SHIELD")]
     public bool isShield;
