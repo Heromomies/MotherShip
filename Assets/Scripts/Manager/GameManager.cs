@@ -7,6 +7,9 @@ public class GameManager : MonoBehaviour
 {
     public Transform spawnEnemies;
     public GameObject canvasButton;
+    public ParticleSystem particleOnTouch;
+    
+    private Camera cam;
     
     #region Singleton
 
@@ -16,15 +19,29 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         gameManager = this;
+        cam = Camera.main;
     }
 
     #endregion
 
-
-    public IEnumerator DeactivateParticles(GameObject objectToDeactivate, float timeBeforeDeactivate)
+    private void Start()
     {
-        yield return new WaitForSeconds(timeBeforeDeactivate);
+        particleOnTouch = Instantiate(particleOnTouch, transform.position, Quaternion.identity);
+        particleOnTouch.Stop();
+    }
 
-        objectToDeactivate.SetActive(false);
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            var target = cam.ScreenToWorldPoint(Input.mousePosition);
+            target.z = 0;
+
+            if (particleOnTouch != null)
+            {
+                particleOnTouch.transform.position = target;
+                particleOnTouch.Play();
+            }
+        }
     }
 }

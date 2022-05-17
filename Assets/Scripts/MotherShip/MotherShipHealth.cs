@@ -51,6 +51,7 @@ public class MotherShipHealth : MonoBehaviour, IDamageable
 
     public void Die()
     {
+        Time.timeScale = 0f;
         panelEnd.SetActive(true);
     }
 }

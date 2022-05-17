@@ -16,6 +16,7 @@ public class Shooter : MonoBehaviour, IDamageable
     private float fireRate;
     private List<string> nameEnemyToSpawn;
     private bool isShooting;
+    private bool canShootFromTheStart;
     
     private Transform target;
     private float currentHealth;
@@ -29,8 +30,14 @@ public class Shooter : MonoBehaviour, IDamageable
         currentHealth = shootBase.health;
         distanceFromMotherShipToStopAndShoot = shootBase.distanceFromMotherShipToStopAndShoot;
         fireRate = shootBase.fireRateToShoot;
-
+        canShootFromTheStart = shootBase.canShootFromTheStart;
+        
         target = MotherShipManager.Instance.transform;
+
+        if (canShootFromTheStart)
+        {
+            InvokeRepeating(nameof(LaunchBullet), 0, fireRate);
+        }
         
         if (shootBase.enemiesToSpawn.Count > 0)
         {

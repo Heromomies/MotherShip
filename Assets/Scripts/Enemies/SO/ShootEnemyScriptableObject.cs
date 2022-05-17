@@ -10,6 +10,7 @@ public class ShootEnemyScriptableObject : ScriptableObject
 	public int health;
 
 	public bool isShield;
+	public bool canShootFromTheStart;
 	public float distanceFromMotherShipToStopAndShoot;
 	public float fireRateToShoot;
 

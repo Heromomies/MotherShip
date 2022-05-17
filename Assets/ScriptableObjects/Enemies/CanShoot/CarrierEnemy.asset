@@ -16,6 +16,7 @@ MonoBehaviour:
   damage: 1
   health: 4
   isShield: 0
+  canShootFromTheStart: 1
   distanceFromMotherShipToStopAndShoot: 0
   fireRateToShoot: 4
   enemiesToSpawn:
