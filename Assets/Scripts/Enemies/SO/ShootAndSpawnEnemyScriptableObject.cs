@@ -15,6 +15,5 @@ public class ShootAndSpawnEnemyScriptableObject : ScriptableObject
 	public float fireRateToSpawnEnemies;
 
 	public bool spawnAnotherEnemyOnDie;
-	public List<string> enemiesToSpawnOnShoot;
 	public List<string> enemiesToSpawn;
 }

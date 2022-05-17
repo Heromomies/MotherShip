@@ -9,14 +9,15 @@ public class MinionsMovement : MonoBehaviour
     public MinionsScriptableObject playerStats;
     
     public Transform minionSprite;
-    private NavMeshAgent navMeshAgent;
+    
+    private NavMeshAgent _navMeshAgent;
 
     private float speed;
-    private Camera cam;
+    private Camera _cam;
 
     private void Awake()
     {
-        cam = Camera.main;
+        _cam = Camera.main;
         speed = playerStats.speed;
     }
     public Texture2D cursorTexture;
@@ -25,10 +26,10 @@ public class MinionsMovement : MonoBehaviour
     void Start()
     {
         Cursor.SetCursor(cursorTexture, Vector2.zero, CursorMode.Auto);
-        navMeshAgent = GetComponent<NavMeshAgent>();
-        navMeshAgent.updateRotation = false;
-        navMeshAgent.updateUpAxis = false;
-        navMeshAgent.speed = speed;
+        _navMeshAgent = GetComponent<NavMeshAgent>();
+        _navMeshAgent.updateRotation = false;
+        _navMeshAgent.updateUpAxis = false;
+        _navMeshAgent.speed = speed;
     }
 
     // Update is called once per frame
@@ -36,15 +37,15 @@ public class MinionsMovement : MonoBehaviour
     {
         if (Input.GetMouseButton(0))
         {
-            Vector3 diff = cam.ScreenToWorldPoint(Input.mousePosition) - minionSprite.position;
+            Vector3 diff = _cam.ScreenToWorldPoint(Input.mousePosition) - minionSprite.position;
             diff.Normalize();
  
             float rotZ = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
             minionSprite.rotation = Quaternion.Euler(0f, 0f, rotZ - 90);
-
-            var target = cam.ScreenToWorldPoint(Input.mousePosition);
+            
+            var target = _cam.ScreenToWorldPoint(Input.mousePosition);
             target.z = 0;
-            navMeshAgent.destination = target;
+            _navMeshAgent.destination = target;
         }
     }
 }

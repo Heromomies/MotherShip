@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0.5
   damage: 3
-  health: 2
+  health: 5
   isShield: 0
   distanceFromMotherShipToStopAndShoot: 0
   fireRateToShoot: 2
