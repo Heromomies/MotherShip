@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 
 public class Scout : MonoBehaviour, IDamageable
@@ -17,6 +18,14 @@ public class Scout : MonoBehaviour, IDamageable
 
     private Transform target;
     private float currentHealth;
+    
+    private Camera _camera;
+    
+    private void Awake()
+    {
+        _camera = Camera.main;
+    }
+
     
     private void Start()
     {
@@ -74,7 +83,9 @@ public class Scout : MonoBehaviour, IDamageable
 
     public void Die()
     {
-        explosionSystem.transform.position = transform.position;
+        _camera.DOShakePosition(0.2f, 0.3f, 90, 100);
+        
+        explosionSystem.transform.position = transform.position;    
         explosionSystem.Play();
 
         if (canSpawnEnemyOnDie)
@@ -83,6 +94,9 @@ public class Scout : MonoBehaviour, IDamageable
         }
         
         gameObject.SetActive(false);
+        
+        Destroy(explosionSystem, 3f); 
+        Destroy(this, 3f);
     }
     
 }

@@ -1,6 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Shooter : MonoBehaviour, IDamageable
 {
@@ -20,7 +23,14 @@ public class Shooter : MonoBehaviour, IDamageable
     
     private Transform target;
     private float currentHealth;
-    
+
+    private Camera _camera;
+
+    private void Awake()
+    {
+        _camera = Camera.main;
+    }
+
     private void Start()
     {
         ParticleSystem eS = Instantiate(explosionSystem);
@@ -112,9 +122,13 @@ public class Shooter : MonoBehaviour, IDamageable
 
     public void Die()
     {
+        _camera.DOShakePosition(0.2f, 0.3f, 90, 100);
+        
         explosionSystem.transform.position = transform.position;
         explosionSystem.Play();
-
+        Destroy(explosionSystem, 3f); 
+        Destroy(this, 3f);
+        
         CancelInvoke();
 
         gameObject.SetActive(false);
