@@ -43,3 +43,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f4af5bd5d9a5ad4980f79ff1994b77b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnEnemies: {fileID: 0}
+  canvasButton: {fileID: 0}
+  particleOnTouch: {fileID: 4590336919862162997, guid: 3f16b3310a2bfb0448d243fceb1872fd, type: 3}
