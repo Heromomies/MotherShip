@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a30d0a2f053c4e4cab1cdd59f30fd1a, type: 3}
   m_Name: ViperEnemy
   m_EditorClassIdentifier: 
-  speed: 2.5
+  speed: 4
   damage: 3
   health: 2
   isShield: 0
