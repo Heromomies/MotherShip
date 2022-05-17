@@ -13,11 +13,12 @@ MonoBehaviour:
   m_Name: CarrierEnemy
   m_EditorClassIdentifier: 
   speed: 0.2
-  damage: 1
-  health: 4
+  damage: 0.3
+  health: 5
   isShield: 0
   canShootFromTheStart: 1
   distanceFromMotherShipToStopAndShoot: 0
-  fireRateToShoot: 4
+  fireRateToShoot: 5
   enemiesToSpawn:
+  - WorkerEnemy
   - WorkerEnemy
