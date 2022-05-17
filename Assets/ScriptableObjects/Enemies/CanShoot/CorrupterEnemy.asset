@@ -13,11 +13,12 @@ MonoBehaviour:
   m_Name: CorrupterEnemy
   m_EditorClassIdentifier: 
   speed: 3
-  damage: 0
+  damage: 0.1
   health: 4
   isShield: 0
+  canShootFromTheStart: 0
   distanceFromMotherShipToStopAndShoot: 5
-  fireRateToShoot: 2
+  fireRateToShoot: 5
   enemiesToSpawn:
-  - WorkerEnemy
-  - WorkerEnemy
+  - ScourgeEnemy
+  - ScourgeEnemy
