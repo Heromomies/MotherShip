@@ -426,12 +426,12 @@ MonoBehaviour:
   explosionSystem: {fileID: 4314723461917522873, guid: 827937b46a923504fa3f01eef8073f81, type: 3}
   statsBase: {fileID: 11400000, guid: a8fd87054b9821f41b5d497dd588ecdb, type: 2}
   parentRenderer: {fileID: 7811925878731105111}
-  colorToChange: {r: 0.8962264, g: 0.36694553, b: 0.36694553, a: 1}
-  baseColor: {r: 1, g: 1, b: 1, a: 1}
+  colorToChange: {r: 0.9433962, g: 0.65325737, b: 0.65325737, a: 1}
+  baseColor: {r: 1, g: 0.27058825, b: 0.27058825, a: 1}
   durationFadeIn: 0.2
   durationFadeOut: 0.5
   durationShake: 0.6
-  strengthShake: 0.3
+  strengthShake: 0.5
 --- !u!68 &3973696490477056350
 EdgeCollider2D:
   m_ObjectHideFlags: 0

@@ -8,6 +8,4 @@ public class MinionsScriptableObject : ScriptableObject
 	public float speed;
 	public float health;
 	public float damage;
-
-	public ParticleSystem particleOnHit;
 }

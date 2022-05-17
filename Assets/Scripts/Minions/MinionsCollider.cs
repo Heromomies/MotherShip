@@ -6,6 +6,7 @@ using UnityEngine;
 public class MinionsCollider : MonoBehaviour
 {
     public MinionsScriptableObject playerStats;
+    public ParticleSystem particleOnHit;
     private float damage;
 
     private void Awake()
@@ -19,8 +20,8 @@ public class MinionsCollider : MonoBehaviour
         {
             other.GetComponent<IDamageable>().TakeDamage(damage);
 
-            playerStats.particleOnHit = Instantiate(playerStats.particleOnHit, transform.position, Quaternion.identity);
-            playerStats.particleOnHit.Play();
+            particleOnHit = Instantiate(particleOnHit, transform.position, Quaternion.identity);
+            particleOnHit.Play();
         }
     }
 }

@@ -5224,7 +5224,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerStats: {fileID: 11400000, guid: 3e75b84ff415d7340af188b7f69a06b0, type: 2}
   minionSprite: {fileID: 361246918}
-  particleOnTouch: {fileID: 351823990346656427, guid: f9f972753cd307e46a2879f36e4e6b0e, type: 3}
   cursorTexture: {fileID: 2800000, guid: b382c41f6a534374390fe6d5e6e82ca8, type: 3}
 --- !u!114 &8530624176341389013
 MonoBehaviour:
@@ -5239,6 +5238,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerStats: {fileID: 11400000, guid: 3e75b84ff415d7340af188b7f69a06b0, type: 2}
+  particleOnHit: {fileID: 351823990346656427, guid: f9f972753cd307e46a2879f36e4e6b0e, type: 3}
 --- !u!50 &1437559096
 Rigidbody2D:
   serializedVersion: 4
