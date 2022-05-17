@@ -17,7 +17,7 @@ MonoBehaviour:
   health: 4
   isShield: 0
   canShootFromTheStart: 0
-  distanceFromMotherShipToStopAndShoot: 6
+  distanceFromMotherShipToStopAndShoot: 5
   fireRateToShoot: 2
   enemiesToSpawn:
   - ScourgeEnemy

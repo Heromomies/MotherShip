@@ -20,7 +20,9 @@ public class MinionsCollider : MonoBehaviour
         {
             other.GetComponent<IDamageable>().TakeDamage(damage);
 
-            particleOnHit = Instantiate(particleOnHit, transform.position, Quaternion.identity);
+            GameObject a = PoolManager.Instance.SpawnObjectFromPool("ParticleHit", transform.position, Quaternion.identity, null);
+            particleOnHit = a.GetComponent<ParticleSystem>();
+
             particleOnHit.Play();
         }
     }

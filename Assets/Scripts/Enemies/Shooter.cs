@@ -126,9 +126,8 @@ public class Shooter : MonoBehaviour, IDamageable
         
         explosionSystem.transform.position = transform.position;
         explosionSystem.Play();
-        Destroy(explosionSystem, 3f); 
-        Destroy(this, 3f);
-        
+        Destroy(explosionSystem, 3f);
+
         CancelInvoke();
 
         gameObject.SetActive(false);

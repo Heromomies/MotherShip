@@ -29,6 +29,10 @@ public class Scout : MonoBehaviour, IDamageable
     
     private void Start()
     {
+        parentRenderer.gameObject.SetActive(true);
+        GetComponent<EdgeCollider2D>().enabled = true;
+        GetComponent<Scout>().enabled = true;
+        
         ParticleSystem eS = Instantiate(explosionSystem);
         explosionSystem = eS;
         damage = statsBase.damage;
@@ -94,9 +98,5 @@ public class Scout : MonoBehaviour, IDamageable
         }
         
         gameObject.SetActive(false);
-        
-        Destroy(explosionSystem, 3f); 
-        Destroy(this, 3f);
     }
-    
 }

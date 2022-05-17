@@ -39,8 +39,9 @@ public class Dash : MonoBehaviour, IDamageable
     // Start is called before the first frame update
     void Start()
     {
-        ParticleSystem eS = Instantiate(explosionSystem);
-        explosionSystem = eS;
+        GameObject a = PoolManager.Instance.SpawnObjectFromPool("ParticleExplosionEnemy", transform.position, Quaternion.identity, null);
+        
+        explosionSystem = a.GetComponent<ParticleSystem>();
         damage = statsBase.damage;
         speed = statsBase.speed;
         currentHealth = statsBase.health;
@@ -144,6 +145,5 @@ public class Dash : MonoBehaviour, IDamageable
         CancelInvoke();
 
         gameObject.SetActive(false);
-        Destroy(this, 3f);
     }
 }

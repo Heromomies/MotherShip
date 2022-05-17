@@ -53,3 +53,9 @@ MonoBehaviour:
   - poolTag: ScourgeEnemy
     prefab: {fileID: 8025395330359451590, guid: 238a01a1996d0b946a69a61fd383b0fb, type: 3}
     poolSize: 20
+  - poolTag: ParticleHit
+    prefab: {fileID: 3814079974664225706, guid: f9f972753cd307e46a2879f36e4e6b0e, type: 3}
+    poolSize: 10
+  - poolTag: ParticleExplosionEnemy
+    prefab: {fileID: 3161996406017965336, guid: 827937b46a923504fa3f01eef8073f81, type: 3}
+    poolSize: 15
