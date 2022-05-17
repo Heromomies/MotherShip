@@ -1367,6 +1367,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7006427602870376153, guid: 4168854c23b95c340ad9cc47beb20dca, type: 3}
+      propertyPath: InitialModule.maxNumParticles
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 7006427602870376155, guid: 4168854c23b95c340ad9cc47beb20dca, type: 3}
       propertyPath: m_Name
       value: PS_Stars
