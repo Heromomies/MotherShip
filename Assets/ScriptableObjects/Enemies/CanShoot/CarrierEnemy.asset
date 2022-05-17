@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee897e27440f0fc408c0b7ce371428e6, type: 3}
   m_Name: CarrierEnemy
   m_EditorClassIdentifier: 
-  speed: 0.5
-  damage: 3
-  health: 5
+  speed: 0.2
+  damage: 1
+  health: 4
   isShield: 0
+  canShootFromTheStart: 1
   distanceFromMotherShipToStopAndShoot: 0
-  fireRateToShoot: 2
+  fireRateToShoot: 4
   enemiesToSpawn:
   - WorkerEnemy

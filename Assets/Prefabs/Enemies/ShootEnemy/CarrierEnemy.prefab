@@ -425,7 +425,8 @@ MonoBehaviour:
   explosionSystem: {fileID: 4314723461917522873, guid: 827937b46a923504fa3f01eef8073f81, type: 3}
   shootBase: {fileID: 11400000, guid: 8d3a67cd52df36f4c90ff409de92f793, type: 2}
   parentRenderer: {fileID: 1705102269572313369}
-  spawnPointsEnemyOnShoot: []
+  spawnPointsEnemyOnShoot:
+  - {fileID: 5806355236241469123}
 --- !u!68 &728585394525978132
 EdgeCollider2D:
   m_ObjectHideFlags: 0

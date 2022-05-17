@@ -9,9 +9,8 @@ public class MotherShipHealth : MonoBehaviour, IDamageable
     // Update is called once per frame
     public float currentHealth;
     public float timeRegen;
+    public GameObject panelEnd;
 
-    
-    
     public Slider sliderHealth;
 
     private void Start()
@@ -52,7 +51,7 @@ public class MotherShipHealth : MonoBehaviour, IDamageable
 
     public void Die()
     {
-        Debug.Log("I'm dead");
-       //TODO end of the game
+        Time.timeScale = 0f;
+        panelEnd.SetActive(true);
     }
 }
