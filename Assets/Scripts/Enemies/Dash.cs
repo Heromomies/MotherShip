@@ -29,12 +29,19 @@ public class Dash : MonoBehaviour, IDamageable
     private Transform target;
     private float currentHealth;
     private SpriteRenderer spriteRenderer;
+    private Camera _camera;
+    
+    private void Awake()
+    {
+        _camera = Camera.main;
+    }
     
     // Start is called before the first frame update
     void Start()
     {
-        ParticleSystem eS = Instantiate(explosionSystem);
-        explosionSystem = eS;
+        GameObject a = PoolManager.Instance.SpawnObjectFromPool("ParticleExplosionEnemy", transform.position, Quaternion.identity, null);
+        
+        explosionSystem = a.GetComponent<ParticleSystem>();
         damage = statsBase.damage;
         speed = statsBase.speed;
         currentHealth = statsBase.health;
@@ -120,9 +127,13 @@ public class Dash : MonoBehaviour, IDamageable
 
     public void Die()
     {
+        _camera.DOShakePosition(0.2f, 0.3f, 90, 100);
+        
         explosionSystem.transform.position = transform.position;
         explosionSystem.Play();
 
+        Destroy(explosionSystem, 3f); 
+        
         if (canSpawnEnemyOnDie)
         {
             for (int i = 0; i < nameEnemyToSpawn.Count; i++)

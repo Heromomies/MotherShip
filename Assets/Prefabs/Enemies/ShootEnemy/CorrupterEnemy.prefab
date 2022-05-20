@@ -29,7 +29,7 @@ Transform:
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 6440130826641326064}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1817782346
 SpriteRenderer:
@@ -111,7 +111,7 @@ Transform:
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 6440130826641326064}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1985084961
 SpriteRenderer:
@@ -191,7 +191,7 @@ Transform:
   m_LocalPosition: {x: 0, y: -0.009, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 2}
   m_Children: []
-  m_Father: {fileID: 2511469180968909223}
+  m_Father: {fileID: 6440130826641326064}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1192689129577029526
@@ -222,12 +222,13 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 2014005570322371600}
   - {fileID: 1817782347}
   - {fileID: 1985084962}
   - {fileID: 4252772405564661288}
   - {fileID: 8574475189007280416}
   m_Father: {fileID: 2511469180968909223}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &556434158408615647
 Animator:
@@ -237,7 +238,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1192689129577029526}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 2325b42bcc7994b42a376bcba5c30328, type: 2}
   m_CullingMode: 0
@@ -278,7 +279,6 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 2014005570322371600}
   - {fileID: 6440130826641326064}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -382,7 +382,7 @@ Transform:
   m_LocalScale: {x: 0.12, y: 0.12, z: 0.16}
   m_Children: []
   m_Father: {fileID: 6440130826641326064}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!96 &2755668928566679862
 TrailRenderer:
@@ -500,7 +500,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1539652222934312582, guid: ace8add581449234a9c324155fcb23af, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1539652222934312582, guid: ace8add581449234a9c324155fcb23af, type: 3}
       propertyPath: m_LocalPosition.x

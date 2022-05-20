@@ -20,6 +20,8 @@ public class WaveSpawner : MonoBehaviour
 	public Wave[] waves;
 	public List<Transform> spawnPoints;
 
+	public GameObject winPanel;
+	
 	#region Singleton
 
 	private static WaveSpawner _waveSpawner;
@@ -51,6 +53,11 @@ public class WaveSpawner : MonoBehaviour
 			{
 				SpawnButtons();
 			}
+		}
+		else
+		{
+			Time.timeScale = 0f;
+			winPanel.SetActive(true);
 		}
 	}
 
