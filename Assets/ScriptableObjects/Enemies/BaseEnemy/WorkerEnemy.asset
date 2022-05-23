@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a30d0a2f053c4e4cab1cdd59f30fd1a, type: 3}
   m_Name: WorkerEnemy
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 2
   damage: 0.5
   health: 1
   isShield: 0

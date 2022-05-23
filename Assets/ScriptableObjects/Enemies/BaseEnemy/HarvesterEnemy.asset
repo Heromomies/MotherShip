@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a30d0a2f053c4e4cab1cdd59f30fd1a, type: 3}
   m_Name: HarvesterEnemy
   m_EditorClassIdentifier: 
-  speed: 2
-  damage: 2
-  health: 1
+  speed: 1
+  damage: 1.5
+  health: 4
   isShield: 0
-  spawnAnotherEnemyOnDie: 1
-  nameEnemyToSpawn: WorkerEnemy
+  spawnAnotherEnemyOnDie: 0
+  nameEnemyToSpawn: 
