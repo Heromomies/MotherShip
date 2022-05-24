@@ -49,6 +49,7 @@ public class Scout : MonoBehaviour, IDamageable
         target = MotherShipManager.Instance.transform;
 
         squareToDisplace = Instantiate(squareToDisplace, transform.position, Quaternion.identity);
+        squareToDisplace.GetComponentInChildren<LookEnemyManager>().target = transform;
         screenBounds = _camera.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, _camera.transform.position.z));
     }
 
@@ -65,13 +66,11 @@ public class Scout : MonoBehaviour, IDamageable
         transform.position = Vector2.MoveTowards(tPosition, targetPosition, speed * Time.deltaTime);
 
         RaycastHit2D raycastHit2D = Physics2D.Raycast(tPosition, diff, 3f, layerDetection);
-        
-        if (raycastHit2D != null && squareToDisplace != null)
+
+        if (raycastHit2D.collider != null && squareToDisplace != null)
         {
             Debug.DrawRay(tPosition, diff, Color.red);
-            Debug.Log(raycastHit2D.transform.position);
-            
-            squareToDisplace.transform.position = raycastHit2D.transform.position;
+            squareToDisplace.transform.position = raycastHit2D.point;
         }
     }
     
