@@ -16,7 +16,7 @@ public class DashEnemyScriptableObject : ScriptableObject
     [Header("DASH")]
     public float distanceFromMotherShipToStopAndDash;
     public float timeBeforeDash;
-    public float numberDivideToDash;
+    public float dashDistance;
     
     [Header("DIE")]
     public List<Transform> spawnPoints;

@@ -17,7 +17,7 @@ public class Dash : MonoBehaviour, IDamageable
     private float speed;
     private float damage;
     private float distanceFromMotherShipToStopAndShoot;
-    private float numberDivideToDash;
+    private float dashDistance;
     private float timeBeforeDash;
    
     private List<string> nameEnemyToSpawn;
@@ -39,16 +39,15 @@ public class Dash : MonoBehaviour, IDamageable
     // Start is called before the first frame update
     void Start()
     {
-        GameObject a = PoolManager.Instance.SpawnObjectFromPool("ParticleExplosionEnemy", transform.position, Quaternion.identity, null);
-        
-        explosionSystem = a.GetComponent<ParticleSystem>();
+        ParticleSystem eS = Instantiate(explosionSystem);
+        explosionSystem = eS;
         damage = statsBase.damage;
         speed = statsBase.speed;
         currentHealth = statsBase.health;
         canSpawnEnemyOnDie = statsBase.spawnAnotherEnemyOnDie;
         distanceFromMotherShipToStopAndShoot = statsBase.distanceFromMotherShipToStopAndDash;
         spawnPointsEnemy = statsBase.spawnPoints;
-        numberDivideToDash = statsBase.numberDivideToDash;
+        dashDistance = statsBase.dashDistance;
         timeBeforeDash = statsBase.timeBeforeDash;
 
         spriteRenderer = GetComponentInChildren<SpriteRenderer>(); //TODO GetComponentInChildren in the future
@@ -96,7 +95,16 @@ public class Dash : MonoBehaviour, IDamageable
         yield return new WaitForSeconds(timeBeforeDash);
         isDashing = true;
         
-        transform.DOMove(target.position / numberDivideToDash, 0.1f);
+        // Calculate the difference only once
+        var movement = target.position - transform.position;
+        // Make sure that delta has a maximum magnitude of dashLength
+        movement = Vector3.ClampMagnitude(movement, dashDistance);
+   
+        // MoveToPoint expects a position not only the movement vector
+        // so you start at your current position and add the movement
+        var newPosition = transform.position + movement;
+        
+        transform.DOMove(newPosition , 0.1f);
         
         spriteRenderer.DOColor(baseColor, durationFadeOut);
     }
@@ -132,8 +140,6 @@ public class Dash : MonoBehaviour, IDamageable
         explosionSystem.transform.position = transform.position;
         explosionSystem.Play();
 
-        Destroy(explosionSystem, 3f); 
-        
         if (canSpawnEnemyOnDie)
         {
             for (int i = 0; i < nameEnemyToSpawn.Count; i++)

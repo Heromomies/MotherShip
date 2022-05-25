@@ -9,6 +9,8 @@ public class Scout : MonoBehaviour, IDamageable
     public ParticleSystem explosionSystem;
     public BaseEnemiesScriptableObject statsBase;
     public Transform parentRenderer;
+
+    public LayerMask layerDetection;
     
     private float speed;
     private float damage;
@@ -20,7 +22,10 @@ public class Scout : MonoBehaviour, IDamageable
     private float currentHealth;
     
     private Camera _camera;
+
+    public GameObject squareToDisplace;
     
+    public Vector2 screenBounds;
     private void Awake()
     {
         _camera = Camera.main;
@@ -29,10 +34,6 @@ public class Scout : MonoBehaviour, IDamageable
     
     private void Start()
     {
-        parentRenderer.gameObject.SetActive(true);
-        GetComponent<EdgeCollider2D>().enabled = true;
-        GetComponent<Scout>().enabled = true;
-        
         ParticleSystem eS = Instantiate(explosionSystem);
         explosionSystem = eS;
         damage = statsBase.damage;
@@ -46,6 +47,10 @@ public class Scout : MonoBehaviour, IDamageable
         }
 
         target = MotherShipManager.Instance.transform;
+
+        squareToDisplace = Instantiate(squareToDisplace, transform.position, Quaternion.identity);
+        squareToDisplace.GetComponentInChildren<LookEnemyManager>().target = transform;
+        screenBounds = _camera.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, _camera.transform.position.z));
     }
 
     void Update()
@@ -59,6 +64,14 @@ public class Scout : MonoBehaviour, IDamageable
         parentRenderer.rotation = Quaternion.Euler(0f, 0f, rotZ - 90);
         
         transform.position = Vector2.MoveTowards(tPosition, targetPosition, speed * Time.deltaTime);
+
+        RaycastHit2D raycastHit2D = Physics2D.Raycast(tPosition, diff, 3f, layerDetection);
+
+        if (raycastHit2D.collider != null && squareToDisplace != null)
+        {
+            Debug.DrawRay(tPosition, diff, Color.red);
+            squareToDisplace.transform.position = raycastHit2D.point;
+        }
     }
     
     private void OnTriggerEnter2D(Collider2D other)
